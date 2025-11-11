@@ -16,6 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1rerr")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_158mb")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_right = 3840.0
@@ -26,8 +32,34 @@ text = "The Great Space Clicker"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_158mb")
-layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 654.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.0
+offset_top = -152.0
+offset_right = 3547.0
+offset_bottom = 1174.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2275112, 0.2275112)
+theme_override_constants/separation = 159
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(4000, 0)
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = " START "
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = " OPTIONS "
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "EXIT"
