@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjhv8gwv6b5ae"]
+[gd_scene load_steps=13 format=3 uid="uid://bjhv8gwv6b5ae"]
 
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_prnvy"]
 [ext_resource type="Script" uid="uid://bqapyih777hvc" path="res://Scripts/options.gd" id="1_qyyw6"]
@@ -14,6 +14,18 @@ script = ExtResource("5_663nc")
 
 [sub_resource type="Resource" id="Resource_38txh"]
 script = ExtResource("5_663nc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvj8k"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38txh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxf"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_663nc"]
+draw_center = false
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -66,6 +78,7 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings/SmoothScrollContainer"]
 layout_mode = 2
+theme_override_constants/separation = 250
 
 [node name="Window" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -80,15 +93,56 @@ text = "Window Mode:"
 layout_mode = 2
 theme_override_constants/margin_left = 90
 
-[node name="OptionButton" type="OptionButton" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
+[node name="PrevWindowMode" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_4tmxy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hvj8k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38txh")
+text = "<"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="WindowModeText" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_4tmxy")
-selected = 0
-item_count = 3
-popup/item_0/text = "Windowed"
-popup/item_0/id = 0
-popup/item_1/text = "Borderless"
-popup/item_1/id = 1
-popup/item_2/text = "Fullscreen"
-popup/item_2/id = 2
+text = "Windowed"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="NextWindowMode" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_4tmxy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
+text = ">"
+
+[node name="MasterVolume" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "Master Volume:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+theme_override_constants/margin_top = 185
+
+[node name="HSlider" type="HSlider" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+mouse_filter = 1
+value = 50.0
+
+[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/PrevWindowMode" to="." method="_on_prev_window_mode_pressed"]
+[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/NextWindowMode" to="." method="_on_next_window_mode_pressed"]
