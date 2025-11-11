@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b652weliw1pue"]
+[gd_scene load_steps=6 format=3 uid="uid://b652weliw1pue"]
 
 [ext_resource type="Script" uid="uid://yncaqq2pjyvj" path="res://Scripts/menu.gd" id="1_1rerr"]
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="2_xhh6f"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="3_cayip"]
+[ext_resource type="AudioStream" uid="uid://cljsowmpr4pdv" path="res://Assets/OST/SpaceMenu.mp3" id="4_158mb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_158mb"]
 shader = ExtResource("3_cayip")
@@ -63,3 +64,10 @@ text = " OPTIONS "
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
 text = "EXIT"
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_158mb")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
