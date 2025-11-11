@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b652weliw1pue"]
+
+[ext_resource type="Script" uid="uid://yncaqq2pjyvj" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="2_xhh6f"]
+[ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="3_cayip"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_158mb"]
+shader = ExtResource("3_cayip")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 403.3333
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_xhh6f")
+text = "The Great Space Clicker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_158mb")
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 654.0
