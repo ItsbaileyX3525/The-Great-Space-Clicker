@@ -29,6 +29,12 @@ offset_right = 3840.0
 offset_bottom = 403.3333
 scale = Vector2(0.3, 0.3)
 theme = ExtResource("2_xhh6f")
+theme_override_colors/font_shadow_color = Color(0, 0.6431373, 1, 0.25882354)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 36
 text = "The Great Space Clicker"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,6 +73,7 @@ text = "EXIT"
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_158mb")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

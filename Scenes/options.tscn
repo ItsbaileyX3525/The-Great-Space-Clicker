@@ -145,17 +145,17 @@ text = ">"
 [node name="Resolution" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="WindowLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+[node name="ResolutionLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_4tmxy")
-text = "Window Mode:"
+text = "Resolution:"
 
 [node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 theme_override_constants/margin_left = 90
 
-[node name="PrevWindowMode" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+[node name="PrevResolution" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -168,17 +168,17 @@ text = "<"
 layout_mode = 2
 theme_override_constants/margin_left = 90
 
-[node name="WindowModeText" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+[node name="ResolutionText" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_4tmxy")
-text = "Windowed"
+text = "1152x648"
 
 [node name="MarginContainer3" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 theme_override_constants/margin_left = 90
 
-[node name="NextWindowMode" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+[node name="NextResolution" type="Button" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
@@ -186,6 +186,17 @@ theme = ExtResource("2_4tmxy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
 text = ">"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="ResolutionText2" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+theme_override_font_sizes/font_size = 130
+text = "Scaling could lead to weird artifacts, be careful"
 
 [node name="MasterVolume" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -302,8 +313,8 @@ bus = &"Music"
 
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/PrevWindowMode" to="." method="_on_prev_window_mode_pressed"]
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/NextWindowMode" to="." method="_on_next_window_mode_pressed"]
-[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Resolution/PrevWindowMode" to="." method="_on_prev_window_mode_pressed"]
-[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Resolution/NextWindowMode" to="." method="_on_next_window_mode_pressed"]
+[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Resolution/PrevResolution" to="." method="_on_prev_resolution_pressed"]
+[connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Resolution/NextResolution" to="." method="_on_next_resolution_pressed"]
 [connection signal="drag_ended" from="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
 [connection signal="value_changed" from="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="drag_ended" from="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]

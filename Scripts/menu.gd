@@ -9,3 +9,15 @@ func _on_options_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_start_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_options_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_exit_mouse_entered() -> void:
+	pass # Replace with function body.

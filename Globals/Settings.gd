@@ -5,7 +5,7 @@ var default_settings: Dictionary = {
 	"musicVol" : 50,
 	"sfxVol" : 50,
 	"windowMode" : 0,
-	"resolution" : "1152x648"
+	"resolution" : 0,
 }
 
 var current_save: Dictionary = {}
@@ -21,6 +21,15 @@ func load_settings() -> void:
 	elif int(current_save["windowMode"]) == 2:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+
+	if  int(current_save["resolution"]) == 0:
+		DisplayServer.window_set_size(Vector2i(1152,648))
+	elif int(current_save["resolution"]) == 1:
+		DisplayServer.window_set_size(Vector2i(1280,720))
+	elif int(current_save["resolution"]) == 2:
+		DisplayServer.window_set_size(Vector2i(1920,1080))
+	elif int(current_save["resolution"]) == 3:
+		DisplayServer.window_set_size(Vector2i(2560,1440))
 
 	#Load audio busses
 	var master_audio_bus := AudioServer.get_bus_index("Master")
@@ -43,7 +52,7 @@ func save_data() -> void:
 	if not access:
 		return
 	print("saving:",current_save)
-	access.store_string(JSON.stringify(current_save))
+	access.store_string(JSON.stringify(current_save,"	"))
 	
 
 func _ready() -> void:
