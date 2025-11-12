@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="Space-Explorer"
+run/main_scene="uid://b652weliw1pue"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[autoload]
+
+Settings="*res://Globals/Settings.gd"
 
 [display]
 
