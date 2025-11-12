@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bjhv8gwv6b5ae"]
+[gd_scene load_steps=19 format=3 uid="uid://bjhv8gwv6b5ae"]
 
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_prnvy"]
 [ext_resource type="Script" uid="uid://bqapyih777hvc" path="res://Scripts/options.gd" id="1_qyyw6"]
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="2_4tmxy"]
+[ext_resource type="FontFile" uid="uid://b6g0firsm8es5" path="res://Assets/Fonts/StarShieldV2-9M52K.ttf" id="4_hvj8k"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="4_kftxf"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_663nc"]
 [ext_resource type="AudioStream" uid="uid://bu2s6p3285wcs" path="res://Assets/OST/Settings.mp3" id="6_663nc"]
@@ -65,9 +66,25 @@ offset_right = 3840.0
 offset_bottom = 328.0
 scale = Vector2(0.3, 0.3)
 theme = ExtResource("2_4tmxy")
+theme_override_colors/font_shadow_color = Color(0, 0.6431373, 1, 0.25882354)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 36
+theme_override_fonts/font = ExtResource("4_hvj8k")
+theme_override_font_sizes/font_size = 325
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.17580467, 0.17580467)
+theme = ExtResource("2_4tmxy")
+text = " RETURN "
 
 [node name="Settings" type="Control" parent="."]
 layout_mode = 1
@@ -115,6 +132,8 @@ layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_4tmxy")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hvj8k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_38txh")
 text = "<"
@@ -138,6 +157,8 @@ layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_4tmxy")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
 text = ">"
@@ -160,6 +181,8 @@ layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_4tmxy")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hvj8k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_38txh")
 text = "<"
@@ -183,6 +206,8 @@ layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_4tmxy")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
 text = ">"
@@ -192,11 +217,13 @@ layout_mode = 2
 theme_override_constants/margin_left = 90
 
 [node name="ResolutionText2" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+custom_minimum_size = Vector2(3000, 0)
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_4tmxy")
 theme_override_font_sizes/font_size = 130
 text = "Scaling could lead to weird artifacts, be careful"
+autowrap_mode = 2
 
 [node name="MasterVolume" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -311,6 +338,7 @@ stream = ExtResource("6_663nc")
 autoplay = true
 bus = &"Music"
 
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/PrevWindowMode" to="." method="_on_prev_window_mode_pressed"]
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/NextWindowMode" to="." method="_on_next_window_mode_pressed"]
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Resolution/PrevResolution" to="." method="_on_prev_resolution_pressed"]

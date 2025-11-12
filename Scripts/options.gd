@@ -40,6 +40,9 @@ func load_positions() -> void:
 func _ready() -> void:
 	load_positions()
 
+func _on_return_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
 func _on_prev_window_mode_pressed() -> void:
 	onWindowMode -= 1
 	if onWindowMode <= -1:
@@ -50,13 +53,17 @@ func _on_prev_window_mode_pressed() -> void:
 		window_label.text = "Windowed"
 		Settings.current_save["windowMode"] = 0
 	elif onWindowMode == 1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+			DisplayServer.window_set_position(Vector2i(0,0))
 			window_label.text = "Fullscreen"
 			Settings.current_save["windowMode"] = 1
 	elif onWindowMode == 2:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		DisplayServer.window_set_position(Vector2i(0,0))
 		window_label.text = "Windowed (Borderless)"
 		Settings.current_save["windowMode"] = 2
 	Settings.save_data()

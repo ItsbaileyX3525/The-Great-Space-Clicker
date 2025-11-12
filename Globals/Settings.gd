@@ -16,11 +16,15 @@ func load_settings() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 	elif int(current_save["windowMode"]) == 1:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_position(Vector2i(0,0))
 	elif int(current_save["windowMode"]) == 2:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		DisplayServer.window_set_position(Vector2i(0,0))
 
 	if  int(current_save["resolution"]) == 0:
 		DisplayServer.window_set_size(Vector2i(1152,648))
