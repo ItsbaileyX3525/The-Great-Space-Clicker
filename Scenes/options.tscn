@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjhv8gwv6b5ae"]
+[gd_scene load_steps=18 format=3 uid="uid://bjhv8gwv6b5ae"]
 
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_prnvy"]
 [ext_resource type="Script" uid="uid://bqapyih777hvc" path="res://Scripts/options.gd" id="1_qyyw6"]
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="2_4tmxy"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="4_kftxf"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_663nc"]
+[ext_resource type="AudioStream" uid="uid://bu2s6p3285wcs" path="res://Assets/OST/Settings.mp3" id="6_663nc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4tmxy"]
 shader = ExtResource("1_prnvy")
@@ -26,6 +27,22 @@ draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_663nc"]
 draw_center = false
+
+[sub_resource type="DPITexture" id="DPITexture_kftxf"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 10.0
+
+[sub_resource type="DPITexture" id="DPITexture_663nc"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a0sy"]
+expand_margin_top = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kftxf"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -134,15 +151,112 @@ mouse_filter = 1
 theme = ExtResource("2_4tmxy")
 text = "Master Volume:"
 
-[node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+[node name="MarginContainer2" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
 layout_mode = 2
-theme_override_constants/margin_top = 185
+theme_override_constants/margin_left = 65
 
-[node name="HSlider" type="HSlider" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer"]
-custom_minimum_size = Vector2(800, 0)
+[node name="MasterVolLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
 value = 50.0
+
+[node name="MusicVolume" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicVolume" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "Music Volume:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="MusicVolLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
+value = 50.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXVolume" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "SFX Volume:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="SFXVolLabel" type="Label" parent="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_4tmxy")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="SFXSlider" type="HSlider" parent="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
+value = 50.0
+
+[node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_663nc")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/PrevWindowMode" to="." method="_on_prev_window_mode_pressed"]
 [connection signal="pressed" from="Settings/SmoothScrollContainer/VBoxContainer/Window/NextWindowMode" to="." method="_on_next_window_mode_pressed"]
+[connection signal="value_changed" from="Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
