@@ -1,4 +1,17 @@
-[gd_scene format=3 uid="uid://b0oeqxommt21e"]
+[gd_scene load_steps=9 format=3 uid="uid://b0oeqxommt21e"]
+
+[ext_resource type="Script" uid="uid://euvmw3elnii4" path="res://Scripts/Game.gd" id="1_8gbba"]
+[ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://q6eeyvyltl2u" path="res://Decals/blackhole.png" id="2_8gbba"]
+[ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://dp66cxglvjmy6" path="res://Scripts/shops.gd" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://c1rt8aid52v0u" path="res://Decals/NASA.webp" id="6_21xkr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
+shader = ExtResource("1_bo1nx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
+draw_center = false
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -7,3 +20,129 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8gbba")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Main" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clicker" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 405.0
+offset_top = 308.0
+offset_right = 1025.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5266408, 0.5266408)
+theme_override_styles/focus = SubResource("StyleBoxFlat_jjvhh")
+icon = ExtResource("2_8gbba")
+flat = true
+
+[node name="ScoreText" type="Label" parent="Main"]
+layout_mode = 0
+offset_right = 1994.9235
+offset_bottom = 262.0
+scale = Vector2(0.16519015, 0.16519015)
+theme = ExtResource("4_jjvhh")
+text = "Cosmic dust:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreText2" type="Label" parent="Main"]
+layout_mode = 0
+offset_right = 4178.458
+offset_bottom = 262.0
+scale = Vector2(0.2756998, 0.2756998)
+theme = ExtResource("4_jjvhh")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Shops" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_kry3j")
+
+[node name="nasaShop" type="Button" parent="Shops"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 0
+offset_left = 31.0
+offset_right = 415.0
+offset_bottom = 200.0
+scale = Vector2(0.80267775, 0.80267775)
+icon = ExtResource("6_21xkr")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Shops/nasaShop"]
+layout_mode = 0
+offset_top = 196.0
+offset_right = 40.0
+offset_bottom = 215.0
+scale = Vector2(0.21715808, 0.21715808)
+theme = ExtResource("4_jjvhh")
+text = "NASA SHOP"
+
+[node name="nasaShop2" type="Button" parent="Shops"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 216.0
+offset_right = 415.0
+offset_bottom = 416.0
+scale = Vector2(0.80267775, 0.80267775)
+icon = ExtResource("6_21xkr")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Shops/nasaShop2"]
+layout_mode = 0
+offset_top = 196.0
+offset_right = 40.0
+offset_bottom = 215.0
+scale = Vector2(0.21715808, 0.21715808)
+theme = ExtResource("4_jjvhh")
+text = "NASA SHOP"
+
+[node name="nasaShop3" type="Button" parent="Shops"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 433.0
+offset_right = 415.0
+offset_bottom = 633.0
+scale = Vector2(0.80267775, 0.80267775)
+icon = ExtResource("6_21xkr")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Shops/nasaShop3"]
+layout_mode = 0
+offset_top = 196.0
+offset_right = 40.0
+offset_bottom = 215.0
+scale = Vector2(0.21715808, 0.21715808)
+theme = ExtResource("4_jjvhh")
+text = "NASA SHOP"
+
+[connection signal="pressed" from="Main/Clicker" to="." method="_on_clicker_pressed"]

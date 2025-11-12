@@ -57,7 +57,6 @@ func save_data() -> void:
 		return
 	print("saving:",current_save)
 	access.store_string(JSON.stringify(current_save,"	"))
-	
 
 func _ready() -> void:
 	current_save = load_data()

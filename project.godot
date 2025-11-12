@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 [autoload]
 
 Settings="*res://Globals/Settings.gd"
+Game="*res://Globals/Game.gd"
 
 [display]
 
