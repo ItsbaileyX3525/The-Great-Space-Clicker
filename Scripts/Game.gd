@@ -11,13 +11,12 @@ func _ready() -> void:
 	update_score()
 
 func update_score() -> void:
-	score_text_2.text = str(int(Game.data["score"].toAA()))
+	score_text_2.text = Game.data["score"].toAA()
 
 func _on_clicker_pressed() -> void:
 	if can_click:
-		var click_score: int = 1
+		var click_score = Big.new(1)
 		Game.data["score"].plusEquals(click_score)
-		
 		update_score()
 		can_click = false
 

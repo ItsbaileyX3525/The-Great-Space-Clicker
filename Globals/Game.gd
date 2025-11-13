@@ -184,7 +184,6 @@ func save_data() -> void:
 	var access = FileAccess.open("user://userData.json", FileAccess.WRITE)
 	if not access:
 		return
-	print("Saved data")
 	data["scoremantissa"] = data["score"].mantissa
 	data["scoreexpo"] = data["score"].exponent
 	access.store_string(JSON.stringify(data, "    ", true, true))
@@ -192,14 +191,17 @@ func save_data() -> void:
 func generate_clicks() -> void:
 	var total_power := Big.new(0)
 
-	for category_name in default_data["shops"].keys():
-		var category = default_data["shops"][category_name]
+	for category_name in data["shops"].keys():
+		var category = data["shops"][category_name]
 		for item_name in category.keys():
 			var item = category[item_name]
 			var power = Big.new(item["generatepowermantissa"], item["generatepowerexpo"])
 			var generated = power.multiply(Big.new(item["purchases"]))
 			total_power.plusEquals(generated)
 			data["score"].plusEquals(total_power)
+			var main = get_tree().get_nodes_in_group("main")
+			if len(main) > 0:
+				get_tree().get_nodes_in_group("main")[0].update_score()
 
 func _ready() -> void:
 	data = load_data()

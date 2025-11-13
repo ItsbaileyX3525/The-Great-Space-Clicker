@@ -14,24 +14,12 @@ extends Control
 var update_timer: Timer
 var can_update: bool = false
 
-func update_cosmic_dust() -> void:
-	score_text_2.text = Game.data["score"].toAA()
-	main.update_score()
-
 func _ready() -> void:
 	can_update = true
 
-func _on_visibility_changed() -> void:
-	if not can_update:
-		return
+func load_stuff() -> void:
 	score_text_2.text = Game.data["score"].toAA()
-	update_timer = Timer.new()
-	update_timer.one_shot = false
-	update_timer.wait_time = 0.8
-	add_child(update_timer)
-	update_timer.start()
-	update_timer.connect("timeout", update_cosmic_dust)
-
+	get_tree().get_nodes_in_group("main")[0].update_score()
 	var gen1Item = Game.data["shops"]["nasashop"]["neilarmstrong"]
 	var gen2Item = Game.data["shops"]["nasashop"]["apollo11"]
 	var gen3Item = Game.data["shops"]["nasashop"]["marsrover"]
@@ -54,6 +42,18 @@ func _on_visibility_changed() -> void:
 	gen_6_price.text = gen6Price
 	gen_7_price.text = gen7Price
 
+func _on_visibility_changed() -> void:
+	if not can_update:
+		return
+	update_timer = Timer.new()
+	update_timer.one_shot = false
+	update_timer.wait_time = 0.8
+	add_child(update_timer)
+	update_timer.start()
+	update_timer.connect("timeout", load_stuff)
+
+	load_stuff()
+
 func _on_return_pressed() -> void:
 	if nasa_shop.visible:
 		nasa_shop.visible = false
@@ -66,7 +66,6 @@ func _on_gen_1_pressed() -> void:
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
 		return
-		
 	Game.data["score"].minusEquals(genPrice)
 	item["purchases"] += 1
 	var growth_multiplier := 1.18
@@ -80,7 +79,7 @@ func _on_gen_1_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_2_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["apollo11"]
@@ -102,7 +101,7 @@ func _on_gen_2_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_3_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["marsrover"]
@@ -124,7 +123,7 @@ func _on_gen_3_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_4_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["iss"]
@@ -146,7 +145,7 @@ func _on_gen_4_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_5_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["hubbletelescope"]
@@ -168,7 +167,7 @@ func _on_gen_5_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_6_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["moonrock"]
@@ -190,7 +189,7 @@ func _on_gen_6_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()
 
 func _on_gen_7_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["howardwolowitz"]
@@ -198,9 +197,10 @@ func _on_gen_7_pressed() -> void:
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
 		return
-		
+
 	Game.data["score"].minusEquals(genPrice)
 	item["purchases"] += 1
+	
 	var growth_multiplier := 1.18
 	
 	var new_mantissa = item["pricemantissa"] * growth_multiplier
@@ -212,4 +212,4 @@ func _on_gen_7_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	update_cosmic_dust()
+	load_stuff()

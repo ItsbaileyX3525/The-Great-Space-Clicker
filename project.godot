@@ -18,7 +18,6 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 Settings="*res://Globals/Settings.gd"
 Game="*res://Globals/Game.gd"
-Generator="*res://Globals/Generator.gd"
 
 [display]
 
@@ -27,6 +26,10 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+main="The main node"
 
 [gui]
 
