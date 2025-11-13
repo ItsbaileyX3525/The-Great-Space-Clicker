@@ -1,16 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0oeqxommt21e"]
+[gd_scene load_steps=14 format=3 uid="uid://b0oeqxommt21e"]
 
 [ext_resource type="Script" uid="uid://euvmw3elnii4" path="res://Scripts/Game.gd" id="1_8gbba"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://q6eeyvyltl2u" path="res://Decals/blackhole.png" id="2_8gbba"]
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://dp66cxglvjmy6" path="res://Scripts/shops.gd" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://chpuf3r2fbpjx" path="res://Decals/shop.jpg" id="5_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://c1rt8aid52v0u" path="res://Decals/NASA.webp" id="6_21xkr"]
+[ext_resource type="Texture2D" uid="uid://dsis7wtugl1ed" path="res://Decals/Weirdmageddon.jpg" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://bsc6c4pwfxypm" path="res://Decals/interstella.jpg" id="8_ynf5e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("1_bo1nx")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynf5e"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 draw_center = false
 
 [node name="Main" type="Control"]
@@ -29,7 +38,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Main" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -74,75 +82,187 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="ShopButton" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 356.00006
+offset_right = 1056.0
+offset_bottom = 505.00006
+scale = Vector2(1.2549601, 1.2549601)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ynf5e")
+icon = ExtResource("5_ynf5e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Main/ShopButton"]
+layout_mode = 0
+offset_top = 150.99998
+offset_right = 1788.2261
+offset_bottom = 413.0
+scale = Vector2(0.13756649, 0.13756649)
+theme = ExtResource("4_jjvhh")
+text = "ENTER SHOP"
+horizontal_alignment = 1
+
+[node name="PrestigeShop" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 94.0
+offset_right = 1056.0
+offset_bottom = 243.0
+scale = Vector2(1.2549601, 1.2549601)
+theme_override_styles/focus = SubResource("StyleBoxFlat_hptm8")
+icon = ExtResource("5_ynf5e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Main/PrestigeShop"]
+layout_mode = 0
+offset_top = 150.99998
+offset_right = 3327.1816
+offset_bottom = 413.0
+scale = Vector2(0.07378849, 0.07378849)
+theme = ExtResource("4_jjvhh")
+text = "ENTER PRESTIGE SHOP"
+horizontal_alignment = 1
+
+[node name="ClickCD" type="Timer" parent="Main"]
+wait_time = 0.02
+autostart = true
+
+[node name="Settings" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 795.0
+offset_right = 803.0
+offset_bottom = 8.0
+
+[node name="Leaderboard" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 795.0
+offset_right = 803.0
+offset_bottom = 8.0
+
 [node name="Shops" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 53.999996
+offset_right = 106.107544
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.91407126, 0.91407126)
 script = ExtResource("5_kry3j")
 
-[node name="nasaShop" type="Button" parent="Shops"]
+[node name="Background2" type="ColorRect" parent="Shops"]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_top = -59.076347
+offset_right = 1260.2955
+offset_bottom = 649.8399
+
+[node name="NasaShop" type="Button" parent="Shops"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 31.0
+offset_top = 15.9999695
 offset_right = 415.0
-offset_bottom = 200.0
+offset_bottom = 215.99997
 scale = Vector2(0.80267775, 0.80267775)
 icon = ExtResource("6_21xkr")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="Shops/nasaShop"]
+[node name="Label" type="Label" parent="Shops/NasaShop"]
 layout_mode = 0
 offset_top = 196.0
-offset_right = 40.0
-offset_bottom = 215.0
-scale = Vector2(0.21715808, 0.21715808)
+offset_right = 1833.4604
+offset_bottom = 458.0
+scale = Vector2(0.20792593, 0.20792593)
 theme = ExtResource("4_jjvhh")
-text = "NASA SHOP"
+text = "nasa shop"
+horizontal_alignment = 1
 
-[node name="nasaShop2" type="Button" parent="Shops"]
+[node name="WeirdShop" type="Button" parent="Shops"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 31.0
-offset_top = 216.0
-offset_right = 415.0
-offset_bottom = 416.0
+offset_top = 231.0
+offset_right = 387.30737
+offset_bottom = 431.0
 scale = Vector2(0.80267775, 0.80267775)
-icon = ExtResource("6_21xkr")
+icon = ExtResource("7_344ge")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="Shops/nasaShop2"]
+[node name="Label" type="Label" parent="Shops/WeirdShop"]
 layout_mode = 0
 offset_top = 196.0
-offset_right = 40.0
-offset_bottom = 215.0
-scale = Vector2(0.21715808, 0.21715808)
+offset_right = 2736.7712
+offset_bottom = 458.0
+scale = Vector2(0.13929698, 0.13929698)
 theme = ExtResource("4_jjvhh")
-text = "NASA SHOP"
+text = "weirdmageddon"
+horizontal_alignment = 1
 
-[node name="nasaShop3" type="Button" parent="Shops"]
+[node name="ShowShop" type="Button" parent="Shops"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 31.0
-offset_top = 433.0
-offset_right = 415.0
-offset_bottom = 633.0
+offset_top = 431.0
+offset_right = 387.30737
+offset_bottom = 631.0
 scale = Vector2(0.80267775, 0.80267775)
-icon = ExtResource("6_21xkr")
+icon = ExtResource("8_ynf5e")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="Shops/nasaShop3"]
+[node name="Label" type="Label" parent="Shops/ShowShop"]
 layout_mode = 0
 offset_top = 196.0
-offset_right = 40.0
-offset_bottom = 215.0
-scale = Vector2(0.21715808, 0.21715808)
+offset_right = 2736.7712
+offset_bottom = 458.0
+scale = Vector2(0.13929698, 0.13929698)
 theme = ExtResource("4_jjvhh")
-text = "NASA SHOP"
+text = "show shop"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="Shops"]
+layout_mode = 0
+offset_left = 8.752053
+offset_top = -51.41831
+offset_right = 1336.2391
+offset_bottom = 210.5817
+scale = Vector2(0.21756727, 0.21756727)
+theme = ExtResource("4_jjvhh")
+text = "RETURN"
+
+[node name="NasaShop" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WeirdShop" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShowShop" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Main/Clicker" to="." method="_on_clicker_pressed"]
+[connection signal="pressed" from="Main/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="timeout" from="Main/ClickCD" to="." method="_on_click_cd_timeout"]
+[connection signal="pressed" from="Shops/NasaShop" to="Shops" method="_on_nasa_shop_pressed"]
+[connection signal="pressed" from="Shops/WeirdShop" to="Shops" method="_on_weird_shop_pressed"]
+[connection signal="pressed" from="Shops/ShowShop" to="Shops" method="_on_show_shop_pressed"]
+[connection signal="pressed" from="Shops/Return" to="Shops" method="_on_return_pressed"]

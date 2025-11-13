@@ -3,16 +3,36 @@ shader_type canvas_item;
 float hash(vec2 p) {
 	return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
 }
-// Noise-like function for soft background texture
+
+// Improved hash for 2D vectors
+vec2 hash2(vec2 p) {
+	p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+	return fract(sin(p) * 43758.5453123);
+}
+
+// Perlin-style gradient noise for smooth transitions
 float noise(vec2 p) {
 	vec2 i = floor(p);
 	vec2 f = fract(p);
-	float a = hash(i);
-	float b = hash(i + vec2(1.0, 0.0));
-	float c = hash(i + vec2(0.0, 1.0));
-	float d = hash(i + vec2(1.0, 1.0));
-	vec2 u = f * f * (3.0 - 2.0 * f); // smooth curve
-	return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+	
+	// Generate random gradients for corners
+	vec2 ga = hash2(i) * 2.0 - 1.0;
+	vec2 gb = hash2(i + vec2(1.0, 0.0)) * 2.0 - 1.0;
+	vec2 gc = hash2(i + vec2(0.0, 1.0)) * 2.0 - 1.0;
+	vec2 gd = hash2(i + vec2(1.0, 1.0)) * 2.0 - 1.0;
+	
+	// Compute dot products with distance vectors
+	float va = dot(ga, f);
+	float vb = dot(gb, f - vec2(1.0, 0.0));
+	float vc = dot(gc, f - vec2(0.0, 1.0));
+	float vd = dot(gd, f - vec2(1.0, 1.0));
+	
+	// Smooth interpolation (quintic hermite)
+	vec2 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);
+	
+	// Bilinear interpolation - normalize to 0-1 range
+	float result = mix(mix(va, vb, u.x), mix(vc, vd, u.x), u.y);
+	return clamp(result * 0.5 + 0.5, 0.0, 1.0);
 }
 void fragment() {
 	vec2 uv = UV * 3.0; // scale UV space up for more stars
@@ -38,38 +58,48 @@ void fragment() {
 
 	bg_col *= 0.6; // mostly dark but with purple undertone
 	//--------------------------------
-	// STARS (with slow horizontal drift)
+	// STARS (with slow horizontal drift to the left)
 	//--------------------------------
-	// Add time-based offset to create horizontal scrolling
-	vec2 star_offset = vec2(TIME * 0.001, 0.0); // adjust 0.001 to change speed
+	// Add time-based offset for very slow leftward movement
+	vec2 star_offset = vec2(-TIME * 0.001, 0.0); // very slow drift
 	vec2 star_uv = uv + star_offset;
 
 	float total_star_brightness = 0.0;
 	vec3 total_star_color = vec3(0.0);
 
+	// Grid resolution for stars
+	vec2 star_grid_uv = star_uv * 80.0;
+	
 	// Check 3x3 grid of cells to prevent clipping at edges
 	for (int x = -1; x <= 1; x++) {
 		for (int y = -1; y <= 1; y++) {
 			vec2 neighbor_offset = vec2(float(x), float(y));
-			vec2 check_uv = star_uv * 80.0 + neighbor_offset;
-			vec2 star_grid = floor(check_uv);
-			vec2 local = fract(star_uv * 80.0);
-
+			vec2 star_grid = floor(star_grid_uv) + neighbor_offset;
+			
 			float rnd = hash(star_grid);
 			float has_star = step(0.996, rnd);  // ~0.4% chance of star per cell
 
-			// Star parameters
-			float size = 0.25 + hash(star_grid + 1.23) * 0.6;
-			vec2 centre = vec2(hash(star_grid + 2.7), hash(star_grid + 5.4)) + neighbor_offset;
-			float dist = length(local - centre);
+			// Randomize star position within its cell
+			vec2 star_pos = star_grid + vec2(hash(star_grid + 2.7), hash(star_grid + 5.4));
+			
+			// Calculate distance from current pixel to star
+			float dist = length(star_grid_uv - star_pos);
 
+			// Star size with variation
+			float size = 0.1 + hash(star_grid + 1.23) * 0.02;
+			
 			// Smooth circular falloff with soft edges
-			float core = smoothstep(size + 0.1, 0.0, dist);
+			float core = smoothstep(size * 2.0, 0.0, dist);
 			core *= has_star;
 
-			// Twinkle animation using a unique random phase
-			float twinkle = 0.5 + 0.5 * sin(TIME * (2.0 + hash(star_grid + 9.0) * 5.0) + rnd * 6.2831);
-			core *= 0.7 + 0.3 * twinkle;
+			// Very subtle twinkle animation - only some stars twinkle very gently
+			float twinkle_chance = hash(star_grid + 7.5);
+			float twinkle = 1.0;
+			if (twinkle_chance > 0.9) {  // Only 10% of stars twinkle
+				// Extremely subtle twinkle - stays between 0.92 and 1.0 brightness
+				twinkle = 0.92 + 0.08 * sin(TIME * (0.3 + hash(star_grid + 9.0) * 0.5) + rnd * 6.2831);
+			}
+			core *= twinkle;
 
 			// Slight colour variation (blue-white to yellow-white)
 			vec3 star_color = mix(vec3(0.8, 0.85, 1.0), vec3(1.0, 0.9, 0.7), hash(star_grid + 4.0));

@@ -1,7 +1,9 @@
 extends Control
-@onready var score_text_2: Label = $ScoreText2
 @onready var main: Control = $Main
 @onready var shops: Control = $Shops
+@onready var score_text_2: Label = $Main/ScoreText2
+
+var can_click: bool = true
 
 func _ready() -> void:
 	update_score()
@@ -10,7 +12,18 @@ func update_score() -> void:
 	score_text_2.text = str(int(Game.data["score"].toString()))
 
 func _on_clicker_pressed() -> void:
-	var click_score: int = 1
-	Game.data["score"].plusEquals(click_score)
-	
-	update_score()
+	if can_click:
+		var click_score: int = 1
+		Game.data["score"].plusEquals(click_score)
+		
+		update_score()
+		can_click = false
+
+
+func _on_click_cd_timeout() -> void:
+	can_click = true
+
+func _on_shop_button_pressed() -> void:
+	if main.visible:
+		main.visible = false
+		shops.visible = true
