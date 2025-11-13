@@ -48,7 +48,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Main" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -67,6 +66,7 @@ offset_bottom = 724.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5266408, 0.5266408)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_jjvhh")
 icon = ExtResource("2_8gbba")
 flat = true
@@ -100,6 +100,7 @@ offset_top = 356.00006
 offset_right = 1056.0
 offset_bottom = 505.00006
 scale = Vector2(1.2549601, 1.2549601)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_ynf5e")
 icon = ExtResource("5_ynf5e")
 flat = true
@@ -123,6 +124,7 @@ offset_top = 94.0
 offset_right = 1056.0
 offset_bottom = 243.0
 scale = Vector2(1.2549601, 1.2549601)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_hptm8")
 icon = ExtResource("5_ynf5e")
 flat = true
@@ -184,7 +186,6 @@ offset_top = 15.9999695
 offset_right = 415.0
 offset_bottom = 215.99997
 scale = Vector2(0.80267775, 0.80267775)
-icon = ExtResource("6_21xkr")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -199,37 +200,53 @@ theme = ExtResource("4_jjvhh")
 text = "nasa shop"
 horizontal_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Shops/NasaShop"]
+layout_mode = 0
+offset_right = 383.89258
+offset_bottom = 199.5011
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_21xkr")
+expand_mode = 1
+
 [node name="WeirdShop" type="Button" parent="Shops"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 31.0
 offset_top = 231.0
-offset_right = 387.30737
+offset_right = 416.25552
 offset_bottom = 431.0
 scale = Vector2(0.80267775, 0.80267775)
-icon = ExtResource("7_344ge")
+mouse_default_cursor_shape = 2
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Label" type="Label" parent="Shops/WeirdShop"]
 layout_mode = 0
-offset_top = 196.0
+offset_top = 199.08882
 offset_right = 2736.7712
-offset_bottom = 458.0
+offset_bottom = 461.0888
 scale = Vector2(0.13929698, 0.13929698)
 theme = ExtResource("4_jjvhh")
 text = "weirdmageddon"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Shops/WeirdShop"]
+layout_mode = 0
+offset_right = 383.89258
+offset_bottom = 199.5011
+texture = ExtResource("7_344ge")
+expand_mode = 1
 
 [node name="ShowShop" type="Button" parent="Shops"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 31.0
 offset_top = 431.0
-offset_right = 387.30737
+offset_right = 416.25552
 offset_bottom = 631.0
 scale = Vector2(0.80267775, 0.80267775)
+mouse_default_cursor_shape = 2
 icon = ExtResource("8_ynf5e")
 flat = true
 icon_alignment = 1
@@ -237,13 +254,20 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="Shops/ShowShop"]
 layout_mode = 0
-offset_top = 196.0
-offset_right = 2736.7712
-offset_bottom = 458.0
+offset_top = 199.3419
+offset_right = 2755.929
+offset_bottom = 461.34192
 scale = Vector2(0.13929698, 0.13929698)
 theme = ExtResource("4_jjvhh")
 text = "show shop"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Shops/ShowShop"]
+layout_mode = 0
+offset_right = 383.89258
+offset_bottom = 199.5011
+texture = ExtResource("8_ynf5e")
+expand_mode = 1
 
 [node name="Return" type="Button" parent="Shops"]
 layout_mode = 0
@@ -256,6 +280,7 @@ theme = ExtResource("4_jjvhh")
 text = "RETURN"
 
 [node name="NasaShop" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -272,6 +297,7 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(0.18820423, 0.18820423)
+mouse_default_cursor_shape = 2
 theme = ExtResource("4_jjvhh")
 text = " RETURN "
 
@@ -282,6 +308,7 @@ offset_top = 64.0
 offset_right = 289.0
 offset_bottom = 203.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -323,6 +350,7 @@ offset_top = 270.0
 offset_right = 289.0
 offset_bottom = 409.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -363,6 +391,7 @@ offset_top = 475.00003
 offset_right = 289.0
 offset_bottom = 614.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -403,6 +432,7 @@ offset_top = 64.0
 offset_right = 536.0
 offset_bottom = 203.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -443,6 +473,7 @@ offset_top = 270.0
 offset_right = 536.0
 offset_bottom = 409.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -483,6 +514,7 @@ offset_top = 469.0
 offset_right = 536.0
 offset_bottom = 608.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -523,6 +555,7 @@ offset_top = 270.0
 offset_right = 787.00006
 offset_bottom = 409.0
 scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 
@@ -562,6 +595,7 @@ offset_left = 826.0
 offset_top = 185.0
 offset_right = 1094.0
 offset_bottom = 409.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
 flat = true
 

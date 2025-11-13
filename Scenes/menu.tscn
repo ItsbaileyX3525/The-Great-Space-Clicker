@@ -82,16 +82,19 @@ theme_override_constants/separation = 114
 [node name="Start" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(4000, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_xhh6f")
 text = " START "
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_xhh6f")
 text = " OPTIONS "
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_xhh6f")
 text = "EXIT"
 
