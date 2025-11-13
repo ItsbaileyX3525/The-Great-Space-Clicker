@@ -32,7 +32,7 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 draw_center = false
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" groups=["main"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +48,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Main" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -255,7 +256,6 @@ theme = ExtResource("4_jjvhh")
 text = "RETURN"
 
 [node name="NasaShop" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -304,6 +304,18 @@ theme = ExtResource("11_6iyac")
 texture = ExtResource("10_hptm8")
 expand_mode = 1
 
+[node name="Gen1Purchased" type="Label" parent="NasaShop/Gen1"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2893.2346
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Gen2" type="Button" parent="NasaShop"]
 layout_mode = 0
 offset_left = 28.0
@@ -332,12 +344,24 @@ scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("13_fdnlq")
 expand_mode = 1
 
+[node name="Gen2Purchased" type="Label" parent="NasaShop/Gen2"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2893.2346
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Gen3" type="Button" parent="NasaShop"]
 layout_mode = 0
 offset_left = 28.0
-offset_top = 469.0
+offset_top = 475.00003
 offset_right = 289.0
-offset_bottom = 608.0
+offset_bottom = 614.0
 scale = Vector2(0.8791219, 0.8791219)
 theme = ExtResource("11_6iyac")
 flat = true
@@ -359,6 +383,18 @@ offset_bottom = 48.311726
 scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("14_fevyy")
 expand_mode = 1
+
+[node name="Gen3Purchased" type="Label" parent="NasaShop/Gen3"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2893.2346
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Gen4" type="Button" parent="NasaShop"]
 layout_mode = 0
@@ -388,6 +424,18 @@ scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("15_hibaj")
 expand_mode = 1
 
+[node name="Gen4Purchased" type="Label" parent="NasaShop/Gen4"]
+layout_mode = 0
+offset_left = -15.924984
+offset_top = 169.4873
+offset_right = 2910.297
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Gen5" type="Button" parent="NasaShop"]
 layout_mode = 0
 offset_left = 275.0
@@ -415,6 +463,18 @@ offset_bottom = 48.311726
 scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("16_pdsj5")
 expand_mode = 1
+
+[node name="Gen5Purchased" type="Label" parent="NasaShop/Gen5"]
+layout_mode = 0
+offset_left = -15.924984
+offset_top = 169.4873
+offset_right = 2910.297
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Gen6" type="Button" parent="NasaShop"]
 layout_mode = 0
@@ -444,6 +504,18 @@ scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("17_ee4r6")
 expand_mode = 1
 
+[node name="Gen6Purchased" type="Label" parent="NasaShop/Gen6"]
+layout_mode = 0
+offset_left = -15.924984
+offset_top = 169.4873
+offset_right = 2910.297
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Gen7" type="Button" parent="NasaShop"]
 layout_mode = 0
 offset_left = 526.00006
@@ -471,6 +543,18 @@ offset_bottom = 48.311726
 scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("18_gt3je")
 expand_mode = 1
+
+[node name="Gen7Purchased" type="Label" parent="NasaShop/Gen7"]
+layout_mode = 0
+offset_left = -6.8250656
+offset_top = 169.4873
+offset_right = 2919.3972
+offset_bottom = 696.4873
+scale = Vector2(0.10058987, 0.10058987)
+theme = ExtResource("4_jjvhh")
+text = "Purchased: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Prestige" type="Button" parent="NasaShop"]
 layout_mode = 0

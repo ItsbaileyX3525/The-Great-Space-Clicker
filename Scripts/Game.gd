@@ -20,7 +20,6 @@ func _on_clicker_pressed() -> void:
 		update_score()
 		can_click = false
 
-
 func _on_click_cd_timeout() -> void:
 	can_click = true
 

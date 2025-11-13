@@ -10,6 +10,13 @@ extends Control
 @onready var gen_7_price: Label = $Gen7/Gen7Price
 @onready var score_text_2: Label = $ScoreText2
 @onready var main: Control = $".."
+@onready var gen_1_purchased: Label = $Gen1/Gen1Purchased
+@onready var gen_2_purchased: Label = $Gen2/Gen2Purchased
+@onready var gen_3_purchased: Label = $Gen3/Gen3Purchased
+@onready var gen_4_purchased: Label = $Gen4/Gen4Purchased
+@onready var gen_5_purchased: Label = $Gen5/Gen5Purchased
+@onready var gen_6_purchased: Label = $Gen6/Gen6Purchased
+@onready var gen_7_purchased: Label = $Gen7/Gen7Purchased
 
 var update_timer: Timer
 var can_update: bool = false
@@ -34,6 +41,13 @@ func load_stuff() -> void:
 	var gen5Price = "Cost: " + Big.new(gen5Item["pricemantissa"], gen5Item["priceexpo"]).toAA()
 	var gen6Price = "Cost: " + Big.new(gen6Item["pricemantissa"], gen6Item["priceexpo"]).toAA()
 	var gen7Price = "Cost: " + Big.new(gen7Item["pricemantissa"], gen7Item["priceexpo"]).toAA()
+	var gen1Bought = "Purchased: " + Big.new(gen1Item["purchases"]).toAA()
+	var gen2Bought = "Purchased: " + Big.new(gen2Item["purchases"]).toAA() 
+	var gen3Bought = "Purchased: " + Big.new(gen3Item["purchases"]).toAA() 
+	var gen4Bought = "Purchased: " + Big.new(gen4Item["purchases"]).toAA() 
+	var gen5Bought = "Purchased: " + Big.new(gen5Item["purchases"]).toAA() 
+	var gen6Bought = "Purchased: " + Big.new(gen6Item["purchases"]).toAA() 
+	var gen7Bought = "Purchased: " + Big.new(gen7Item["purchases"]).toAA() 
 	gen_1_price.text = gen1Price
 	gen_2_price.text = gen2Price
 	gen_3_price.text = gen3Price
@@ -41,6 +55,13 @@ func load_stuff() -> void:
 	gen_5_price.text = gen5Price
 	gen_6_price.text = gen6Price
 	gen_7_price.text = gen7Price
+	gen_1_purchased.text = gen1Bought
+	gen_2_purchased.text = gen2Bought
+	gen_3_purchased.text = gen3Bought
+	gen_4_purchased.text = gen4Bought
+	gen_5_purchased.text = gen5Bought
+	gen_6_purchased.text = gen6Bought
+	gen_7_purchased.text = gen7Bought
 
 func _on_visibility_changed() -> void:
 	if not can_update:
