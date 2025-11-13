@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b0oeqxommt21e"]
+[gd_scene load_steps=41 format=3 uid="uid://b0oeqxommt21e"]
 
 [ext_resource type="Script" uid="uid://euvmw3elnii4" path="res://Scripts/Game.gd" id="1_8gbba"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_bo1nx"]
@@ -6,12 +6,17 @@
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://dp66cxglvjmy6" path="res://Scripts/shops.gd" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://chpuf3r2fbpjx" path="res://Decals/shop.jpg" id="5_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://c1rt8aid52v0u" path="res://Decals/NASA.webp" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://dsis7wtugl1ed" path="res://Decals/Weirdmageddon.jpg" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://bylkhrujpu6vi" path="res://Decals/settings_white.png" id="7_hibaj"]
+[ext_resource type="Texture2D" uid="uid://bngimo6mk0ugb" path="res://Decals/leaderboard_white.png" id="8_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bsc6c4pwfxypm" path="res://Decals/interstella.jpg" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ddea8h4o6bnel" path="res://Decals/morshu.png" id="9_6vcvc"]
+[ext_resource type="Script" uid="uid://bdn4a62x1e38n" path="res://Scripts/leaderboard_menu.gd" id="9_hpc6h"]
 [ext_resource type="Script" uid="uid://kyq1fy20d8n" path="res://Scripts/Shops/nasa_shop.gd" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://cux8ej5mm2mig" path="res://Decals/nasaShop/neil.jpg" id="10_hptm8"]
+[ext_resource type="Script" uid="uid://cl8pr1ak5j4mr" path="res://Scripts/prestige_shop.gd" id="10_kltya"]
 [ext_resource type="Theme" uid="uid://b3mu0ggj0o00w" path="res://Assets/Themes/nofocus.tres" id="11_6iyac"]
+[ext_resource type="AudioStream" uid="uid://cmcro30r35six" path="res://Assets/Voice/Morshu.mp3" id="11_kltya"]
 [ext_resource type="Texture2D" uid="uid://cwufusfa4e7mg" path="res://Decals/nasaShop/apollo11.jpg" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cslg0bgc05dg0" path="res://Decals/nasaShop/marsrover.webp" id="14_fevyy"]
 [ext_resource type="Texture2D" uid="uid://1btf3gpk1bej" path="res://Decals/nasaShop/iss.jpg" id="15_hibaj"]
@@ -19,6 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://dos2iukjqsdbk" path="res://Decals/nasaShop/Moon rock.jpg" id="17_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://cd516l4ds41yv" path="res://Decals/nasaShop/Howard.jpg" id="18_gt3je"]
 [ext_resource type="Texture2D" uid="uid://cwkt3ggotxy36" path="res://Decals/ascension.webp" id="19_3pmx8"]
+[ext_resource type="Script" uid="uid://bje5b5rvl31ok" path="res://Scripts/Shops/weird_shop.gd" id="21_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://dmawu0pfgijnp" path="res://Decals/weirdShop/black_hole.webp" id="22_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://cvicd5sxedbnq" path="res://Decals/weirdShop/whitehole.jpg" id="23_6vcvc"]
+[ext_resource type="Texture2D" uid="uid://dafw1koqxless" path="res://Decals/weirdShop/neutron.jpg" id="24_7k868"]
+[ext_resource type="Texture2D" uid="uid://c0f8m2wh2sgk2" path="res://Decals/weirdShop/quasar.jpg" id="25_hpc6h"]
+[ext_resource type="Texture2D" uid="uid://dgyc0n133pljv" path="res://Decals/weirdShop/wormhole.jpg" id="26_kltya"]
+[ext_resource type="Texture2D" uid="uid://c71c87385tbri" path="res://Decals/weirdShop/darkmatter.webp" id="27_e08e2"]
+[ext_resource type="Texture2D" uid="uid://hdd443hxtfct" path="res://Decals/weirdShop/mooncheese.webp" id="28_neg2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("1_bo1nx")
@@ -31,6 +44,70 @@ draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 draw_center = false
+
+[sub_resource type="Animation" id="Animation_7k868"]
+resource_name = "play"
+length = 3.3667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334, 0.9666667, 1, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2666668, 1.3000001, 1.3333334, 1.3666668, 1.4000001, 1.4333334, 1.4666667, 1.5000001, 1.5333334, 1.5666667, 1.6000001, 1.6333334, 1.6666667, 1.7, 1.7333335, 1.7666668, 1.8000001, 1.8333334, 1.8666668, 1.9000001, 1.9333334, 1.9666668, 2, 2.0333335, 2.0666668, 2.1000001, 2.1333334, 2.1666667, 2.2, 2.2333333, 2.266667, 2.3000002, 2.3333335, 2.3666668, 2.4, 2.4333334, 2.4666667, 2.5000002, 2.5333335, 2.5666668, 2.6000001, 2.6333334, 2.6666667, 2.7, 2.7333336, 2.766667, 2.8000002, 2.8333335, 2.8666668, 2.9, 2.9333334, 2.966667, 3.0000002, 3.0333335, 3.0666668, 3.1000001, 3.1333334, 3.1666667, 3.2000003, 3.2333336, 3.266667, 3.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sorry:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hpc6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Sorry:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kltya"]
+_data = {
+&"RESET": SubResource("Animation_hpc6h"),
+&"play": SubResource("Animation_7k868")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ee4r6"]
+load_path = "res://.godot/imported/NASA.webp-71398b1ed78b67be0ada81f044e2c2a0.ctex"
 
 [node name="Main" type="Control" groups=["main"]]
 layout_mode = 3
@@ -147,15 +224,84 @@ autostart = true
 
 [node name="Settings" type="Button" parent="Main"]
 layout_mode = 0
-offset_left = 795.0
-offset_right = 803.0
-offset_bottom = 8.0
+offset_left = 966.0
+offset_top = 6.0
+offset_right = 1021.0
+offset_bottom = 56.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Main/Settings"]
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 50.0
+texture = ExtResource("7_hibaj")
+expand_mode = 1
 
 [node name="Leaderboard" type="Button" parent="Main"]
 layout_mode = 0
-offset_left = 795.0
-offset_right = 803.0
-offset_bottom = 8.0
+offset_left = 897.0
+offset_top = 6.0
+offset_right = 952.0
+offset_bottom = 56.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Main/Leaderboard"]
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 50.0
+texture = ExtResource("8_pdsj5")
+expand_mode = 1
+
+[node name="SettingsMenu" type="Control" parent="Main"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Main/SettingsMenu"]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="LeaderboardMenu" type="Control" parent="Main"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_hpc6h")
+
+[node name="Background" type="ColorRect" parent="Main/LeaderboardMenu"]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PrestigeShop" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_kltya")
+
+[node name="Morshu" type="Sprite2D" parent="PrestigeShop"]
+position = Vector2(576, 324)
+scale = Vector2(2.88, 2.16)
+texture = ExtResource("9_6vcvc")
+hframes = 9
+vframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PrestigeShop/Morshu"]
+libraries = {
+&"": SubResource("AnimationLibrary_kltya")
+}
+
+[node name="Sorry" type="AudioStreamPlayer" parent="PrestigeShop"]
+stream = ExtResource("11_kltya")
 
 [node name="Shops" type="Control" parent="."]
 visible = false
@@ -186,6 +332,7 @@ offset_top = 15.9999695
 offset_right = 415.0
 offset_bottom = 215.99997
 scale = Vector2(0.80267775, 0.80267775)
+theme = ExtResource("11_6iyac")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -205,7 +352,7 @@ layout_mode = 0
 offset_right = 383.89258
 offset_bottom = 199.5011
 mouse_default_cursor_shape = 2
-texture = ExtResource("6_21xkr")
+texture = SubResource("CompressedTexture2D_ee4r6")
 expand_mode = 1
 
 [node name="WeirdShop" type="Button" parent="Shops"]
@@ -217,6 +364,7 @@ offset_right = 416.25552
 offset_bottom = 431.0
 scale = Vector2(0.80267775, 0.80267775)
 mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -247,6 +395,7 @@ offset_right = 416.25552
 offset_bottom = 631.0
 scale = Vector2(0.80267775, 0.80267775)
 mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
 icon = ExtResource("8_ynf5e")
 flat = true
 icon_alignment = 1
@@ -335,11 +484,11 @@ expand_mode = 1
 layout_mode = 0
 offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2893.2346
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -376,20 +525,20 @@ expand_mode = 1
 layout_mode = 0
 offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2893.2346
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Gen3" type="Button" parent="NasaShop"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 475.00003
-offset_right = 289.0
-offset_bottom = 614.0
+offset_left = 27.000002
+offset_top = 463.99997
+offset_right = 288.0
+offset_bottom = 603.0
 scale = Vector2(0.8791219, 0.8791219)
 mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
@@ -417,11 +566,11 @@ expand_mode = 1
 layout_mode = 0
 offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2893.2346
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -456,13 +605,13 @@ expand_mode = 1
 
 [node name="Gen4Purchased" type="Label" parent="NasaShop/Gen4"]
 layout_mode = 0
-offset_left = -15.924984
+offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2910.297
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -497,22 +646,22 @@ expand_mode = 1
 
 [node name="Gen5Purchased" type="Label" parent="NasaShop/Gen5"]
 layout_mode = 0
-offset_left = -15.924984
+offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2910.297
+offset_right = 2437.8088
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Gen6" type="Button" parent="NasaShop"]
 layout_mode = 0
 offset_left = 275.0
-offset_top = 469.0
+offset_top = 464.0
 offset_right = 536.0
-offset_bottom = 608.0
+offset_bottom = 603.0
 scale = Vector2(0.8791219, 0.8791219)
 mouse_default_cursor_shape = 2
 theme = ExtResource("11_6iyac")
@@ -538,13 +687,13 @@ expand_mode = 1
 
 [node name="Gen6Purchased" type="Label" parent="NasaShop/Gen6"]
 layout_mode = 0
-offset_left = -15.924984
+offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2910.297
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -579,13 +728,13 @@ expand_mode = 1
 
 [node name="Gen7Purchased" type="Label" parent="NasaShop/Gen7"]
 layout_mode = 0
-offset_left = -6.8250656
+offset_left = -32.98746
 offset_top = 169.4873
-offset_right = 2919.3972
+offset_right = 2409.8376
 offset_bottom = 696.4873
-scale = Vector2(0.10058987, 0.10058987)
+scale = Vector2(0.122, 0.122)
 theme = ExtResource("4_jjvhh")
-text = "Purchased: 123.12M"
+text = "Owned: 123.12M"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -632,6 +781,18 @@ scale = Vector2(2.8978472, 2.8978472)
 texture = ExtResource("19_3pmx8")
 expand_mode = 1
 
+[node name="PrestigeOwnedLabel" type="Label" parent="NasaShop/Prestige"]
+layout_mode = 0
+offset_left = -41.000008
+offset_top = 356.00003
+offset_right = 3544.0146
+offset_bottom = 1054.2441
+scale = Vector2(0.09595497, 0.09595497)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.213K"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="ScoreText" type="Label" parent="NasaShop"]
 layout_mode = 0
 offset_left = 355.0
@@ -657,18 +818,390 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="WeirdShop" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("21_pdsj5")
 
-[node name="ShowShop" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background2" type="ColorRect" parent="WeirdShop"]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.8399
+
+[node name="Return" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.18820423, 0.18820423)
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+text = " RETURN "
+
+[node name="Gen1" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 64.0
+offset_right = 289.0
+offset_bottom = 203.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen1Price" type="Label" parent="WeirdShop/Gen1"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen1"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+theme = ExtResource("11_6iyac")
+texture = ExtResource("22_ueoa1")
+expand_mode = 1
+
+[node name="Gen1Purchased" type="Label" parent="WeirdShop/Gen1"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen2" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 270.0
+offset_right = 289.0
+offset_bottom = 409.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen2Price" type="Label" parent="WeirdShop/Gen2"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen2"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("23_6vcvc")
+expand_mode = 1
+
+[node name="Gen2Purchased" type="Label" parent="WeirdShop/Gen2"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen3" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 475.00003
+offset_right = 289.0
+offset_bottom = 614.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen3Price" type="Label" parent="WeirdShop/Gen3"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen3"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("24_7k868")
+expand_mode = 1
+
+[node name="Gen3Purchased" type="Label" parent="WeirdShop/Gen3"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen4" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 64.0
+offset_right = 536.0
+offset_bottom = 203.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen4Price" type="Label" parent="WeirdShop/Gen4"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen4"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("25_hpc6h")
+expand_mode = 1
+
+[node name="Gen4Purchased" type="Label" parent="WeirdShop/Gen4"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen5" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 270.0
+offset_right = 536.0
+offset_bottom = 409.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen5Price" type="Label" parent="WeirdShop/Gen5"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen5"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("26_kltya")
+expand_mode = 1
+
+[node name="Gen5Purchased" type="Label" parent="WeirdShop/Gen5"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2437.8088
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen6" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 469.0
+offset_right = 536.0
+offset_bottom = 608.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen6Price" type="Label" parent="WeirdShop/Gen6"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen6"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("27_e08e2")
+expand_mode = 1
+
+[node name="Gen6Purchased" type="Label" parent="WeirdShop/Gen6"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gen7" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 526.00006
+offset_top = 270.0
+offset_right = 787.00006
+offset_bottom = 409.0
+scale = Vector2(0.8791219, 0.8791219)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Gen7Price" type="Label" parent="WeirdShop/Gen7"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 2135.0408
+offset_bottom = 403.0
+scale = Vector2(0.121671245, 0.121671245)
+theme = ExtResource("4_jjvhh")
+text = "COST: 679.67K"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Gen7"]
+layout_mode = 0
+offset_right = 89.72178
+offset_bottom = 48.311726
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("28_neg2b")
+expand_mode = 1
+
+[node name="Gen7Purchased" type="Label" parent="WeirdShop/Gen7"]
+layout_mode = 0
+offset_left = -32.98746
+offset_top = 169.4873
+offset_right = 2409.8376
+offset_bottom = 696.4873
+scale = Vector2(0.122, 0.122)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.12M"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Prestige" type="Button" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 185.0
+offset_right = 1094.0
+offset_bottom = 409.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+flat = true
+
+[node name="Label" type="Label" parent="WeirdShop/Prestige"]
+layout_mode = 0
+offset_left = -41.000008
+offset_top = 223.0
+offset_right = 3544.0146
+offset_bottom = 2075.0
+scale = Vector2(0.09595497, 0.09595497)
+theme = ExtResource("4_jjvhh")
+text = "Do a true prestige and reset all your generators for a big boost. Requires 5 of each generator"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PrestigeOwnedLabel" type="Label" parent="WeirdShop/Prestige"]
+layout_mode = 0
+offset_left = -41.000008
+offset_top = 356.00003
+offset_right = 3544.0146
+offset_bottom = 1054.2441
+scale = Vector2(0.09595497, 0.09595497)
+theme = ExtResource("4_jjvhh")
+text = "Owned: 123.213K"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="WeirdShop/Prestige"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 91.79227
+offset_bottom = 77.6086
+scale = Vector2(2.8978472, 2.8978472)
+texture = ExtResource("19_3pmx8")
+expand_mode = 1
+
+[node name="ScoreText" type="Label" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 355.0
+offset_right = 2349.9233
+offset_bottom = 262.0
+scale = Vector2(0.16519015, 0.16519015)
+theme = ExtResource("4_jjvhh")
+text = "Cosmic dust:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreText2" type="Label" parent="WeirdShop"]
+layout_mode = 0
+offset_left = 691.00006
+offset_right = 1964.1235
+offset_bottom = 262.0
+scale = Vector2(0.2756998, 0.2756998)
+theme = ExtResource("4_jjvhh")
+text = "999.99k"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Main/Clicker" to="." method="_on_clicker_pressed"]
 [connection signal="pressed" from="Main/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Main/PrestigeShop" to="." method="_on_prestige_shop_pressed"]
 [connection signal="timeout" from="Main/ClickCD" to="." method="_on_click_cd_timeout"]
+[connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="visibility_changed" from="Main/LeaderboardMenu" to="Main/LeaderboardMenu" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="PrestigeShop" to="PrestigeShop" method="_on_visibility_changed"]
 [connection signal="pressed" from="Shops/NasaShop" to="Shops" method="_on_nasa_shop_pressed"]
 [connection signal="pressed" from="Shops/WeirdShop" to="Shops" method="_on_weird_shop_pressed"]
 [connection signal="pressed" from="Shops/ShowShop" to="Shops" method="_on_show_shop_pressed"]
@@ -682,3 +1215,14 @@ offset_bottom = 40.0
 [connection signal="pressed" from="NasaShop/Gen5" to="NasaShop" method="_on_gen_5_pressed"]
 [connection signal="pressed" from="NasaShop/Gen6" to="NasaShop" method="_on_gen_6_pressed"]
 [connection signal="pressed" from="NasaShop/Gen7" to="NasaShop" method="_on_gen_7_pressed"]
+[connection signal="pressed" from="NasaShop/Prestige" to="NasaShop" method="_on_prestige_pressed"]
+[connection signal="visibility_changed" from="WeirdShop" to="WeirdShop" method="_on_visibility_changed"]
+[connection signal="pressed" from="WeirdShop/Return" to="WeirdShop" method="_on_return_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen1" to="WeirdShop" method="_on_gen_1_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen2" to="WeirdShop" method="_on_gen_2_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen3" to="WeirdShop" method="_on_gen_3_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen4" to="WeirdShop" method="_on_gen_4_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen5" to="WeirdShop" method="_on_gen_5_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen6" to="WeirdShop" method="_on_gen_6_pressed"]
+[connection signal="pressed" from="WeirdShop/Gen7" to="WeirdShop" method="_on_gen_7_pressed"]
+[connection signal="pressed" from="WeirdShop/Prestige" to="WeirdShop" method="_on_prestige_pressed"]

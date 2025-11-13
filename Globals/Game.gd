@@ -16,102 +16,130 @@ var default_data: Dictionary = {
 			"neilarmstrong": {
 				"purchases": 0,
 				"generatepowermantissa": 7.5,
-				"generatepowerexpo": -1, #0.75
+				"generatepowerexpo": -1,
 				"pricemantissa": 5,
-				"priceexpo": 1     #50
+				"priceexpo": 1,
+				"defaultpricemantissa": 5,
+				"defaultpriceexpo": 1
 			},
 			"apollo11": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
-				"generatepowerexpo": 0,   #2
+				"generatepowerexpo": 0,
 				"pricemantissa": 1,
-				"priceexpo": 2            #100
+				"priceexpo": 2,
+				"defaultpricemantissa": 1,
+				"defaultpriceexpo": 2
 			},
 			"marsrover": {
 				"purchases": 0,
 				"generatepowermantissa": 7,
-				"generatepowerexpo": 0,   #7
+				"generatepowerexpo": 0,
 				"pricemantissa": 2.5,
-				"priceexpo": 2            #250
+				"priceexpo": 2,
+				"defaultpricemantissa": 2.5,
+				"defaultpriceexpo": 2
 			},
 			"iss": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
-				"generatepowerexpo": 1,   #20
+				"generatepowerexpo": 1,
 				"pricemantissa": 8,
-				"priceexpo": 2            #800
+				"priceexpo": 2,
+				"defaultpricemantissa": 8,
+				"defaultpriceexpo": 2
 			},
 			"hubbletelescope": {
 				"purchases": 0,
 				"generatepowermantissa": 5,
-				"generatepowerexpo": 1,   #50
+				"generatepowerexpo": 1,
 				"pricemantissa": 2,
-				"priceexpo": 3            #2000
+				"priceexpo": 3,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 3
 			},
 			"moonrock": {
 				"purchases": 0,
 				"generatepowermantissa": 1,
-				"generatepowerexpo": 2,   #100
+				"generatepowerexpo": 2,
 				"pricemantissa": 6,
-				"priceexpo": 3            #6000
+				"priceexpo": 3,
+				"defaultpricemantissa": 6,
+				"defaultpriceexpo": 3
 			},
 			"howardwolowitz": {
 				"purchases": 0,
 				"generatepowermantissa": 5,
-				"generatepowerexpo": 2,   #500
+				"generatepowerexpo": 2,
 				"pricemantissa": 2,
-				"priceexpo": 4            #20000
+				"priceexpo": 4,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 4
 			}
 		},
 		"weirdmageddon": {
 			"blackhole": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
-				"generatepowerexpo": 3,   #2000
+				"generatepowerexpo": 3,
 				"pricemantissa": 5,
-				"priceexpo": 5            #500000
+				"priceexpo": 5,
+				"defaultpricemantissa": 5,
+				"defaultpriceexpo": 5
 			},
 			"whitehole": {
 				"purchases": 0,
 				"generatepowermantissa": 5,
-				"generatepowerexpo": 3,   #5000
+				"generatepowerexpo": 3,
 				"pricemantissa": 1,
-				"priceexpo": 6            #1000000
+				"priceexpo": 6,
+				"defaultpricemantissa": 1,
+				"defaultpriceexpo": 6
 			},
 			"neutronstar": {
 				"purchases": 0,
 				"generatepowermantissa": 1,
-				"generatepowerexpo": 4,   #10000
+				"generatepowerexpo": 4,
 				"pricemantissa": 5,
-				"priceexpo": 6            #5000000
+				"priceexpo": 6,
+				"defaultpricemantissa": 5,
+				"defaultpriceexpo": 6
 			},
 			"quasars": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
-				"generatepowerexpo": 4,   #20000
+				"generatepowerexpo": 4,
 				"pricemantissa": 2,
-				"priceexpo": 7            #20000000
+				"priceexpo": 7,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 7
 			},
 			"wormhole": {
 				"purchases": 0,
 				"generatepowermantissa": 6,
-				"generatepowerexpo": 4,   #60000
+				"generatepowerexpo": 4,
 				"pricemantissa": 6,
-				"priceexpo": 7            #60000000
+				"priceexpo": 7,
+				"defaultpricemantissa": 6,
+				"defaultpriceexpo": 7
 			},
 			"darkmatter": {
 				"purchases": 0,
 				"generatepowermantissa": 1,
-				"generatepowerexpo": 5,   #100000
+				"generatepowerexpo": 5,
 				"pricemantissa": 2,
-				"priceexpo": 8            #200000000
+				"priceexpo": 8,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 8
 			},
 			"interstellar": {
 				"purchases": 0,
 				"generatepowermantissa": 5,
-				"generatepowerexpo": 5,   #500000
+				"generatepowerexpo": 5,
 				"pricemantissa": 1,
-				"priceexpo": 9            #1000000000
+				"priceexpo": 9,
+				"defaultpricemantissa": 1,
+				"defaultpriceexpo": 9
 			}
 		},
 		"show": {
@@ -120,49 +148,63 @@ var default_data: Dictionary = {
 				"generatepowermantissa": 1,
 				"generatepowerexpo": 6,
 				"pricemantissa": 5,
-				"priceexpo": 9
+				"priceexpo": 9,
+				"defaultpricemantissa": 5,
+				"defaultpriceexpo": 9
 			},
 			"startrek": {
 				"purchases": 0,
 				"generatepowermantissa": 3,
 				"generatepowerexpo": 6,
 				"pricemantissa": 2,
-				"priceexpo": 10
+				"priceexpo": 10,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 10
 			},
 			"battlestargalatica": {
 				"purchases": 0,
 				"generatepowermantissa": 1,
 				"generatepowerexpo": 7,
 				"pricemantissa": 6,
-				"priceexpo": 10
+				"priceexpo": 10,
+				"defaultpricemantissa": 6,
+				"defaultpriceexpo": 10
 			},
 			"doctorwho": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
 				"generatepowerexpo": 7,
 				"pricemantissa": 3,
-				"priceexpo": 11
+				"priceexpo": 11,
+				"defaultpricemantissa": 3,
+				"defaultpriceexpo": 11
 			},
 			"farscape": {
 				"purchases": 0,
 				"generatepowermantissa": 6,
 				"generatepowerexpo": 7,
 				"pricemantissa": 9,
-				"priceexpo": 11
+				"priceexpo": 11,
+				"defaultpricemantissa": 9,
+				"defaultpriceexpo": 11
 			},
 			"lostinspace": {
 				"purchases": 0,
 				"generatepowermantissa": 2,
 				"generatepowerexpo": 8,
 				"pricemantissa": 2,
-				"priceexpo": 12
+				"priceexpo": 12,
+				"defaultpricemantissa": 2,
+				"defaultpriceexpo": 12
 			},
 			"cowboybebop": {
 				"purchases": 0,
 				"generatepowermantissa": 7,
 				"generatepowerexpo": 8,
 				"pricemantissa": 5,
-				"priceexpo": 12
+				"priceexpo": 12,
+				"defaultpricemantissa": 5,
+				"defaultpriceexpo": 12
 			}
 		}
 	}
@@ -175,6 +217,10 @@ func load_data() -> Dictionary:
 		return default_data
 
 	var loaded_data: String = FileAccess.get_file_as_string("user://userData.json")
+	if not len(loaded_data) >= 1:
+		print("Data malformed...")
+		return default_data
+
 	var parsed_data: Dictionary = JSON.parse_string(loaded_data)
 	
 	parsed_data["score"] = Big.new(parsed_data["scoremantissa"],parsed_data["scoreexpo"])

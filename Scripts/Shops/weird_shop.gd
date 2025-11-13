@@ -28,13 +28,13 @@ func _ready() -> void:
 func load_stuff() -> void:
 	score_text_2.text = Game.data["score"].toAA()
 	get_tree().get_nodes_in_group("main")[0].update_score()
-	var gen1Item = Game.data["shops"]["nasashop"]["neilarmstrong"]
-	var gen2Item = Game.data["shops"]["nasashop"]["apollo11"]
-	var gen3Item = Game.data["shops"]["nasashop"]["marsrover"]
-	var gen4Item = Game.data["shops"]["nasashop"]["iss"]
-	var gen5Item = Game.data["shops"]["nasashop"]["hubbletelescope"]
-	var gen6Item = Game.data["shops"]["nasashop"]["moonrock"]
-	var gen7Item = Game.data["shops"]["nasashop"]["howardwolowitz"]
+	var gen1Item = Game.data["shops"]["weirdmageddon"]["blackhole"]
+	var gen2Item = Game.data["shops"]["weirdmageddon"]["whitehole"]
+	var gen3Item = Game.data["shops"]["weirdmageddon"]["neutronstar"]
+	var gen4Item = Game.data["shops"]["weirdmageddon"]["quasars"]
+	var gen5Item = Game.data["shops"]["weirdmageddon"]["wormhole"]
+	var gen6Item = Game.data["shops"]["weirdmageddon"]["darkmatter"]
+	var gen7Item = Game.data["shops"]["weirdmageddon"]["interstellar"]
 	var gen1Price = "Cost: " + Big.new(gen1Item["pricemantissa"], gen1Item["priceexpo"]).toAA()
 	var gen2Price = "Cost: " + Big.new(gen2Item["pricemantissa"], gen2Item["priceexpo"]).toAA()
 	var gen3Price = "Cost: " + Big.new(gen3Item["pricemantissa"], gen3Item["priceexpo"]).toAA()
@@ -63,7 +63,7 @@ func load_stuff() -> void:
 	gen_5_purchased.text = gen5Bought
 	gen_6_purchased.text = gen6Bought
 	gen_7_purchased.text = gen7Bought
-	prestige_owned_label.text = "Owned: " + Big.new(Game.data["prestiges"]["nasaprestiges"]).toAA()
+	prestige_owned_label.text = "Owned: " + Big.new(Game.data["prestiges"]["weirdmageddonprestiges"]).toAA()
 
 func _on_visibility_changed() -> void:
 	if not can_update:
@@ -84,7 +84,7 @@ func _on_return_pressed() -> void:
 		update_timer.call_deferred("queue_free")
 
 func _on_gen_1_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["neilarmstrong"]
+	var item = Game.data["shops"]["weirdmageddon"]["blackhole"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -105,7 +105,7 @@ func _on_gen_1_pressed() -> void:
 	load_stuff()
 
 func _on_gen_2_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["apollo11"]
+	var item = Game.data["shops"]["weirdmageddon"]["whitehole"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -127,7 +127,7 @@ func _on_gen_2_pressed() -> void:
 	load_stuff()
 
 func _on_gen_3_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["marsrover"]
+	var item = Game.data["shops"]["weirdmageddon"]["neutronstar"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -149,7 +149,7 @@ func _on_gen_3_pressed() -> void:
 	load_stuff()
 
 func _on_gen_4_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["iss"]
+	var item = Game.data["shops"]["weirdmageddon"]["quasars"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -171,7 +171,7 @@ func _on_gen_4_pressed() -> void:
 	load_stuff()
 
 func _on_gen_5_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["hubbletelescope"]
+	var item = Game.data["shops"]["weirdmageddon"]["wormhole"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -193,7 +193,7 @@ func _on_gen_5_pressed() -> void:
 	load_stuff()
 
 func _on_gen_6_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["moonrock"]
+	var item = Game.data["shops"]["weirdmageddon"]["darkmatter"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -215,7 +215,7 @@ func _on_gen_6_pressed() -> void:
 	load_stuff()
 
 func _on_gen_7_pressed() -> void:
-	var item = Game.data["shops"]["nasashop"]["howardwolowitz"]
+	var item = Game.data["shops"]["weirdmageddon"]["interstellar"]
 	var genPrice: Big = Big.new(float(item["pricemantissa"]), int(item["priceexpo"]))
 	var curr_score: Big = Game.data["score"]
 	if not curr_score.isGreaterThanOrEqualTo(genPrice):
@@ -239,7 +239,7 @@ func _on_gen_7_pressed() -> void:
 
 func _on_prestige_pressed() -> void:
 	var valid: int = 0
-	var category_name = "nasashop"
+	var category_name = "weirdmageddon"
 	var category = Game.data["shops"][category_name]
 	for item_name in category.keys():
 		var item = category[item_name]
@@ -250,7 +250,7 @@ func _on_prestige_pressed() -> void:
 		return
 		
 	category = Game.data["shops"][category_name]
-	Game.data["prestiges"]["nasaprestiges"] += 1
+	Game.data["prestiges"]["weirdmageddonprestiges"] += 1
 	Game.data["score"].divideEquals(10)
 	for item_name in category.keys():
 		var item = category[item_name]

@@ -10,6 +10,12 @@ Well it's just like any other clicker game, you click the main item, get some sc
 
 In case the game becomes very big I have future proofed by ensuring that the numbers in the game ustilise the big int class so that I can have numbers that are larger than the 64bit signed limit, TO INFINITY!
 
+### File saving (with pretty)
+
+All your data is saved on your device so you can continue where you left off at any point and resume having an undefined amount of fun (because its too big)!
+
+And in case you feel like cheating the game, none of the data is encrypted and I have even made it pretty for you so you can easily read and modify your save data, it is your own game after all! (none of that lisence shit)
+
 There isn't much in the game just yet but right now there is super funny meme and some AI-approved content (I asked chatGPT if the UI looked nice (I did not use AI to generate the UI) )
 
 ## Features to be added
@@ -30,6 +36,7 @@ There isn't much in the game just yet but right now there is super funny meme an
   - [ ] Second page layout
   - [ ] Third page layout
 - [ ] Custom music
+- [ ] Leaderboards
 - [ ] Cheeseburger (as promised)
 
 ## Credits
@@ -49,3 +56,5 @@ These 2 files total far less than the 30% threshold for siege but I thought it w
 ## Asset Credits
 
 [Settings icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/settings)
+
+[Podium icons created by Saepul Nahwan - Flaticon](https://www.flaticon.com/free-icons/podium)

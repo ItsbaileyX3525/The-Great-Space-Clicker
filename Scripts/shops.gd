@@ -17,7 +17,6 @@ func _on_show_shop_pressed() -> void:
 	if not show_shop.visible:
 		show_shop.visible = true
 
-
 func _on_return_pressed() -> void:
 	shops.visible = false
 	main.visible = true
