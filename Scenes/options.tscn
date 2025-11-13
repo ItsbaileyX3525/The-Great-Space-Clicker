@@ -83,6 +83,7 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(0.17580467, 0.17580467)
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_4tmxy")
 text = " RETURN "
 
