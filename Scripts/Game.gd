@@ -6,10 +6,12 @@ extends Control
 var can_click: bool = true
 
 func _ready() -> void:
+	Big.setDynamicDecimals(false)
+	Big.setSmallDecimals(2)
 	update_score()
 
 func update_score() -> void:
-	score_text_2.text = str(int(Game.data["score"].toString()))
+	score_text_2.text = str(int(Game.data["score"].toAA()))
 
 func _on_clicker_pressed() -> void:
 	if can_click:

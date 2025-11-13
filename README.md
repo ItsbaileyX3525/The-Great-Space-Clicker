@@ -6,6 +6,10 @@ Well it's just like any other clicker game, you click the main item, get some sc
 
 ## Cool features
 
+### Big Ints
+
+In case the game becomes very big I have future proofed by ensuring that the numbers in the game ustilise the big int class so that I can have numbers that are larger than the 64bit signed limit, TO INFINITY!
+
 There isn't much in the game just yet but right now there is super funny meme and some AI-approved content (I asked chatGPT if the UI looked nice (I did not use AI to generate the UI) )
 
 ## Features to be added
@@ -15,10 +19,16 @@ There isn't much in the game just yet but right now there is super funny meme an
   - [x] Settings
 - [x] Main clicker item
 - [ ] Generators
+  - [x] First page
+  - [ ] Second page
+  - [ ] Third page
 - [ ] Bonuses
 - [ ] Prestiges
 - [ ] Upgrades
 - [ ] Shops
+  - [x] First page layout
+  - [ ] Second page layout
+  - [ ] Third page layout
 - [ ] Custom music
 - [ ] Cheeseburger (as promised)
 

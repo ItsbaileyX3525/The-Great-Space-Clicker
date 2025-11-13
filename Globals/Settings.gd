@@ -60,5 +60,6 @@ func save_data() -> void:
 
 func _ready() -> void:
 	current_save = load_data()
+	save_data() #Save to file ig, hopefully shouldn't break things :P
 	print(current_save)
 	load_settings()

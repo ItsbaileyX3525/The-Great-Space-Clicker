@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 Settings="*res://Globals/Settings.gd"
 Game="*res://Globals/Game.gd"
+Generator="*res://Globals/Generator.gd"
 
 [display]
 
