@@ -6,6 +6,9 @@ var default_settings: Dictionary = {
 	"sfxVol" : 50,
 	"windowMode" : 0,
 	"resolution" : 0,
+	"clickSound" : 0,
+	"musicCategory" : 0,
+	"musicChoice" : 0,
 }
 
 var current_save: Dictionary = {}

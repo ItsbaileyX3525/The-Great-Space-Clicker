@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b0oeqxommt21e"]
+[gd_scene load_steps=58 format=3 uid="uid://b0oeqxommt21e"]
 
 [ext_resource type="Script" uid="uid://euvmw3elnii4" path="res://Scripts/Game.gd" id="1_8gbba"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_bo1nx"]
@@ -32,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://dgyc0n133pljv" path="res://Decals/weirdShop/wormhole.jpg" id="26_kltya"]
 [ext_resource type="Texture2D" uid="uid://c71c87385tbri" path="res://Decals/weirdShop/darkmatter.webp" id="27_e08e2"]
 [ext_resource type="Texture2D" uid="uid://hdd443hxtfct" path="res://Decals/weirdShop/mooncheese.webp" id="28_neg2b"]
+[ext_resource type="Script" uid="uid://bqapyih777hvc" path="res://Scripts/options.gd" id="33_jwpg7"]
+[ext_resource type="FontFile" uid="uid://b6g0firsm8es5" path="res://Assets/Fonts/StarShieldV2-9M52K.ttf" id="34_k2e45"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="35_536cc"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="36_aqgau"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("1_bo1nx")
@@ -44,6 +48,33 @@ draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
 draw_center = false
+
+[sub_resource type="Animation" id="Animation_hpc6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Sorry:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7k868"]
 resource_name = "play"
@@ -73,33 +104,6 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_hpc6h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("../Sorry:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kltya"]
 _data = {
 &"RESET": SubResource("Animation_hpc6h"),
@@ -108,6 +112,49 @@ _data = {
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ee4r6"]
 load_path = "res://.godot/imported/NASA.webp-71398b1ed78b67be0ada81f044e2c2a0.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4tmxy"]
+shader = ExtResource("1_bo1nx")
+
+[sub_resource type="Resource" id="Resource_hvj8k"]
+script = ExtResource("36_aqgau")
+
+[sub_resource type="Resource" id="Resource_38txh"]
+script = ExtResource("36_aqgau")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvj8k"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38txh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxf"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_663nc"]
+draw_center = false
+
+[sub_resource type="DPITexture" id="DPITexture_kftxf"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 10.0
+
+[sub_resource type="DPITexture" id="DPITexture_663nc"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a0sy"]
+expand_margin_top = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kftxf"]
+
+[sub_resource type="Resource" id="Resource_jwpg7"]
+script = ExtResource("36_aqgau")
+
+[sub_resource type="Resource" id="Resource_k2e45"]
+script = ExtResource("36_aqgau")
 
 [node name="Main" type="Control" groups=["main"]]
 layout_mode = 3
@@ -255,18 +302,6 @@ offset_right = 55.0
 offset_bottom = 50.0
 texture = ExtResource("8_pdsj5")
 expand_mode = 1
-
-[node name="SettingsMenu" type="Control" parent="Main"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Background" type="ColorRect" parent="Main/SettingsMenu"]
-material = SubResource("ShaderMaterial_jjvhh")
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
 
 [node name="LeaderboardMenu" type="Control" parent="Main"]
 visible = false
@@ -1194,6 +1229,430 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("33_jwpg7")
+
+[node name="ColorRect" type="ColorRect" parent="Options"]
+material = SubResource("ShaderMaterial_4tmxy")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Title" type="Label" parent="Options"]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 328.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("4_jjvhh")
+theme_override_colors/font_shadow_color = Color(0, 0.6431373, 1, 0.25882354)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 36
+theme_override_fonts/font = ExtResource("34_k2e45")
+theme_override_font_sizes/font_size = 325
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="Options"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.17580467, 0.17580467)
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+text = " RETURN "
+
+[node name="Settings" type="Control" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Options/Settings"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6104.2534
+offset_bottom = 2702.4038
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15875962, 0.15875962)
+script = ExtResource("35_536cc")
+wheel_scroll_damper = SubResource("Resource_hvj8k")
+dragging_scroll_damper = SubResource("Resource_38txh")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Settings/SmoothScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 250
+
+[node name="Window" type="HBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="WindowLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Window Mode:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="PrevWindowMode" type="Button" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hvj8k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38txh")
+text = "<"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="WindowModeText" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Windowed"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="NextWindowMode" type="Button" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Window"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
+text = ">"
+
+[node name="Resolution" type="HBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Resolution:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="PrevResolution" type="Button" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hvj8k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38txh")
+text = "<"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="ResolutionText" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "1152x648"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="NextResolution" type="Button" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+theme_override_colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_constants/outline_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kftxf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_663nc")
+text = ">"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_constants/margin_left = 90
+
+[node name="ResolutionText2" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution"]
+custom_minimum_size = Vector2(3000, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+theme_override_font_sizes/font_size = 130
+text = "Scaling could lead to weird artifacts, be careful"
+autowrap_mode = 2
+
+[node name="MasterVolume" type="HBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Master Volume:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="MasterVolLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
+value = 50.0
+
+[node name="MusicVolume" type="HBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicVolume" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Music Volume:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="MusicVolLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
+value = 50.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXVolume" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "SFX Volume:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="SFXVolLabel" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "50"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 90
+
+[node name="SFXSlider" type="HSlider" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer"]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = SubResource("DPITexture_kftxf")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_663nc")
+theme_override_styles/slider = SubResource("StyleBoxFlat_5a0sy")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_kftxf")
+value = 50.0
+
+[node name="Code" type="VBoxContainer" parent="Options/Settings/SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Code" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+theme = ExtResource("4_jjvhh")
+text = "Enter Code:"
+
+[node name="CodeInput" type="LineEdit" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Code"]
+layout_mode = 2
+theme = ExtResource("4_jjvhh")
+placeholder_text = "..."
+
+[node name="Page2" type="ScrollContainer" parent="Options/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6093.2827
+offset_bottom = 2697.547
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.159, 0.159)
+script = ExtResource("35_536cc")
+wheel_scroll_damper = SubResource("Resource_jwpg7")
+dragging_scroll_damper = SubResource("Resource_k2e45")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Settings/Page2"]
+layout_mode = 2
+theme_override_constants/separation = 84
+
+[node name="MusicCategory" type="HBoxContainer" parent="Options/Settings/Page2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Options/Settings/Page2/VBoxContainer/MusicCategory"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "MUSIC category:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/Page2/VBoxContainer/MusicCategory"]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+
+[node name="MusicCategoryOption" type="OptionButton" parent="Options/Settings/Page2/VBoxContainer/MusicCategory"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = " Default "
+popup/item_0/id = 0
+popup/item_1/text = " anime"
+popup/item_1/id = 1
+popup/item_2/text = " One piece "
+popup/item_2/id = 2
+popup/item_3/text = "JoJo's"
+popup/item_3/id = 3
+popup/item_4/text = " tv shows "
+popup/item_4/id = 4
+
+[node name="Music" type="HBoxContainer" parent="Options/Settings/Page2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Options/Settings/Page2/VBoxContainer/Music"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "MUSIC:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/Page2/VBoxContainer/Music"]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+
+[node name="MusicChosen" type="OptionButton" parent="Options/Settings/Page2/VBoxContainer/Music"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = " default  "
+popup/item_0/id = 0
+
+[node name="ClickSound" type="HBoxContainer" parent="Options/Settings/Page2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Options/Settings/Page2/VBoxContainer/ClickSound"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("4_jjvhh")
+text = "Click sound:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/Settings/Page2/VBoxContainer/ClickSound"]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+
+[node name="ClickChoice" type="OptionButton" parent="Options/Settings/Page2/VBoxContainer/ClickSound"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = " Default "
+popup/item_0/id = 0
+popup/item_1/text = " Oof "
+popup/item_1/id = 1
+popup/item_2/text = " Metal Pipe "
+popup/item_2/id = 2
+popup/item_3/text = " Noice "
+popup/item_3/id = 3
+
+[node name="NextSettings" type="Button" parent="Options/Settings"]
+layout_mode = 0
+offset_left = 1084.0001
+offset_top = 170.0
+offset_right = 1201.0001
+offset_bottom = 432.0
+scale = Vector2(0.44530144, 0.44530144)
+mouse_default_cursor_shape = 2
+theme = ExtResource("11_6iyac")
+theme_override_font_sizes/font_size = 240
+text = ">"
+flat = true
+
 [connection signal="pressed" from="Main/Clicker" to="." method="_on_clicker_pressed"]
 [connection signal="pressed" from="Main/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Main/PrestigeShop" to="." method="_on_prestige_shop_pressed"]
@@ -1226,3 +1685,19 @@ autowrap_mode = 3
 [connection signal="pressed" from="WeirdShop/Gen6" to="WeirdShop" method="_on_gen_6_pressed"]
 [connection signal="pressed" from="WeirdShop/Gen7" to="WeirdShop" method="_on_gen_7_pressed"]
 [connection signal="pressed" from="WeirdShop/Prestige" to="WeirdShop" method="_on_prestige_pressed"]
+[connection signal="pressed" from="Options/Return" to="Options" method="_on_return_pressed"]
+[connection signal="pressed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Window/PrevWindowMode" to="Options" method="_on_prev_window_mode_pressed"]
+[connection signal="pressed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Window/NextWindowMode" to="Options" method="_on_next_window_mode_pressed"]
+[connection signal="pressed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution/PrevResolution" to="Options" method="_on_prev_resolution_pressed"]
+[connection signal="pressed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Resolution/NextResolution" to="Options" method="_on_next_resolution_pressed"]
+[connection signal="drag_ended" from="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer/MasterVolumeSlider" to="Options" method="_on_master_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/MasterVolume/MarginContainer/MasterVolumeSlider" to="Options" method="_on_master_volume_slider_value_changed"]
+[connection signal="drag_ended" from="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer/MusicVolumeSlider" to="Options" method="_on_music_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer/MusicVolumeSlider" to="Options" method="_on_music_volume_slider_value_changed"]
+[connection signal="drag_ended" from="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer/SFXSlider" to="Options" method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer/SFXSlider" to="Options" method="_on_sfx_slider_value_changed"]
+[connection signal="text_submitted" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Code/CodeInput" to="Options" method="_on_code_input_text_submitted"]
+[connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/MusicCategory/MusicCategoryOption" to="Options" method="_on_music_category_option_item_selected"]
+[connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/Music/MusicChosen" to="Options" method="_on_music_chosen_item_selected"]
+[connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/ClickSound/ClickChoice" to="Options" method="_on_click_choice_item_selected"]
+[connection signal="pressed" from="Options/Settings/NextSettings" to="Options" method="_on_next_settings_pressed"]

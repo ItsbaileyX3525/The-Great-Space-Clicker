@@ -5,10 +5,12 @@ extends Control
 @onready var options: Button = $VBoxContainer/Options
 @onready var exit: Button = $VBoxContainer/Exit
 
+var main_scene = preload("res://Scenes/main.tscn")
+
 var scale_amount: float = 1.05
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	get_tree().change_scene_to_packed(main_scene)
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/options.tscn")

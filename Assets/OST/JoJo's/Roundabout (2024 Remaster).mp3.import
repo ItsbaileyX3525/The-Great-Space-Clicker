@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3l0ykefbik5v"
+path="res://.godot/imported/Roundabout (2024 Remaster).mp3-283be2ec2a289d3a04fbd3c28102be54.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/JoJo's/Roundabout (2024 Remaster).mp3"
+dest_files=["res://.godot/imported/Roundabout (2024 Remaster).mp3-283be2ec2a289d3a04fbd3c28102be54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

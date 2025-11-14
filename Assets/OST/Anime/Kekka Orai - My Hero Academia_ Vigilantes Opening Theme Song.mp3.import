@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj3roj4jq01yj"
+path="res://.godot/imported/Kekka Orai - My Hero Academia_ Vigilantes Opening Theme Song.mp3-27b2d52a6bdd683c668d69d3c11c251f.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/Anime/Kekka Orai - My Hero Academia_ Vigilantes Opening Theme Song.mp3"
+dest_files=["res://.godot/imported/Kekka Orai - My Hero Academia_ Vigilantes Opening Theme Song.mp3-27b2d52a6bdd683c668d69d3c11c251f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

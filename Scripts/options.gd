@@ -7,6 +7,12 @@ extends Control
 @onready var music_volume_slider: HSlider = $Settings/SmoothScrollContainer/VBoxContainer/MusicVolume/MarginContainer/MusicVolumeSlider
 @onready var sfx_slider: HSlider = $Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer/SFXSlider
 @onready var resolution_text: Label = $Settings/SmoothScrollContainer/VBoxContainer/Resolution/ResolutionText
+@onready var options: Control = $"."
+@onready var main: Control = $"../Main"
+@onready var page_1: SmoothScrollContainer = $Settings/SmoothScrollContainer
+@onready var page_2: SmoothScrollContainer = $Settings/Page2
+@onready var music_chosen: OptionButton = $Settings/Page2/VBoxContainer/Music/MusicChosen
+@onready var music_category_option: OptionButton = $Settings/Page2/VBoxContainer/MusicCategory/MusicCategoryOption
 
 var onWindowMode: int = 0
 var onResolution: int = 0
@@ -37,11 +43,18 @@ func load_positions() -> void:
 	music_volume_slider.value = round(int(Settings.current_save["musicVol"]))
 	sfx_slider.value = round(int(Settings.current_save["sfxVol"]))
 	
+	music_category_option.select(Settings.current_save["musicCategory"])
+	_on_music_category_option_item_selected(Settings.current_save["musicCategory"])
+	music_chosen.select(Settings.current_save["musicChoice"])
+	
+	MusicManager.play_music(Settings.current_save["musicCategory"], Settings.current_save["musicChoice"])
+	
 func _ready() -> void:
 	load_positions()
 
 func _on_return_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	main.visible = true
+	options.visible = false
 
 func _on_prev_window_mode_pressed() -> void:
 	onWindowMode -= 1
@@ -168,3 +181,45 @@ func _on_music_volume_slider_drag_ended(value_changed: bool) -> void:
 func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 	if value_changed:
 		Settings.save_data()
+
+func _on_code_input_text_submitted(new_text: String) -> void:
+	print(new_text)
+
+func _on_next_settings_pressed() -> void:
+	if page_1.visible:
+		page_1.visible = false
+		page_2.visible = true
+	else:
+		page_1.visible = true
+		page_2.visible = false
+
+func _on_click_choice_item_selected(index: int) -> void:
+	Settings.current_save["clickSound"] = index
+	Settings.save_data()
+
+func _on_music_chosen_item_selected(index: int) -> void:
+	Settings.current_save["musicChoice"] = index
+	Settings.save_data()
+	MusicManager.play_music(Settings.current_save["musicCategory"], Settings.current_save["musicChoice"])
+
+func _on_music_category_option_item_selected(index: int) -> void:
+	music_chosen.clear()
+	Settings.current_save["musicCategory"] = index
+	match index:
+		0: #Default
+			music_chosen.add_item(" Spacedog ")
+		1: #Anime
+			music_chosen.add_item(" Tit For Tat ")
+			music_chosen.add_item(" Platnium Disco ")
+			music_chosen.add_item(" Kekka Orai ")
+			music_chosen.add_item(" Distance ")
+			music_chosen.add_item(" StorySeeker ")
+		2: #One piece
+			pass
+		3: #JOJO!!!
+			music_chosen.add_item(" Crazy Noisy Town ")
+			music_chosen.add_item(" Bloody Stream ")
+			music_chosen.add_item(" Il vento d'oro ")
+			music_chosen.add_item(" Roundabout ")
+			music_chosen.add_item(" Sono chi no kioku ")
+			

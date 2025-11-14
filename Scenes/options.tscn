@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bjhv8gwv6b5ae"]
 
+[ext_resource type="Script" uid="uid://bdlelem6g5qec" path="res://Scripts/optionsMenu.gd" id="1_hvj8k"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_prnvy"]
-[ext_resource type="Script" uid="uid://bqapyih777hvc" path="res://Scripts/options.gd" id="1_qyyw6"]
 [ext_resource type="Theme" uid="uid://oopr226smwo5" path="res://Assets/Themes/Menu.tres" id="2_4tmxy"]
 [ext_resource type="FontFile" uid="uid://b6g0firsm8es5" path="res://Assets/Fonts/StarShieldV2-9M52K.ttf" id="4_hvj8k"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="4_kftxf"]
@@ -52,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qyyw6")
+script = ExtResource("1_hvj8k")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_4tmxy")

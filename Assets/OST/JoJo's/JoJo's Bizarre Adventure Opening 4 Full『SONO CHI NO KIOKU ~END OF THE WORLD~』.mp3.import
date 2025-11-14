@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cna7ajx1acvgq"
+path="res://.godot/imported/JoJo's Bizarre Adventure Opening 4 Full『SONO CHI NO KIOKU ~END OF THE WORLD~』.mp3-e816e7b782fd659fee89177aa52567e4.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/JoJo's/JoJo's Bizarre Adventure Opening 4 Full『SONO CHI NO KIOKU ~END OF THE WORLD~』.mp3"
+dest_files=["res://.godot/imported/JoJo's Bizarre Adventure Opening 4 Full『SONO CHI NO KIOKU ~END OF THE WORLD~』.mp3-e816e7b782fd659fee89177aa52567e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

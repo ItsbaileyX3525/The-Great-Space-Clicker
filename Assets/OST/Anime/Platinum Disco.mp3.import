@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn06jla4nwpqa"
+path="res://.godot/imported/Platinum Disco.mp3-57df58f565a1ef7575ce80fcd2c03865.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/Anime/Platinum Disco.mp3"
+dest_files=["res://.godot/imported/Platinum Disco.mp3-57df58f565a1ef7575ce80fcd2c03865.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
