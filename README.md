@@ -18,6 +18,24 @@ And in case you feel like cheating the game, none of the data is encrypted and I
 
 There isn't much in the game just yet but right now there is super funny meme and some AI-approved content (I asked chatGPT if the UI looked nice (I did not use AI to generate the UI) )
 
+### Music selection
+
+Bored of the music that plays the background but still want to give something a listen too?
+
+Well You can! With the music selector in the settings you can pick from a wide array of differnt songs, such as; Platnium Disco, We Are!, Bloody Stream and so much more! There are codes you can input into the settings menu which allow you unlock extra secret music (find them below)
+
+And yea your music choice saves too!
+
+### Leaderboards
+
+Want to show off your score to your friends or just dominate everyone that plays the game? (Another rhetotical question I know) YOU CAN! Earn as much score as possible and upload your score to the database and then see as your score appears on the left side of the leaderboard menu!
+
+pls no hack
+
+### Much Much More...
+
+There are loads more features that I cannot be bothered writing about so try out the game and find all the amazing features for youtself!
+
 ## Features to be added
 
 - [x] UI
@@ -28,16 +46,22 @@ There isn't much in the game just yet but right now there is super funny meme an
   - [x] First page
   - [x] Second page
   - [x] Third page
-- [ ] Bonuses
+- [x] Bonuses
 - [x] Prestiges
-- [ ] Upgrades
+- [ ] Upgrades (cba)
 - [x] Shops
   - [x] First page layout
   - [x] Second page layout
   - [x] Third page layout
 - [x] Custom music
-- [ ] Leaderboards
-- [ ] Cheeseburger (as promised)
+- [x] Leaderboards
+- [x] Cheeseburger (as promised)
+
+## Codes
+
+spedicey - Unlocks secret music
+dayumm - Unlocks secret music
+brofist - Unlocks secret music
 
 ## Credits
 
