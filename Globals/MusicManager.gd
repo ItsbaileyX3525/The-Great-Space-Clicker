@@ -51,7 +51,8 @@ var tv_music: Array = [
 
 var secret_music: Array = [
 	preload("uid://b1jv0mlfwgsa5"),
-	preload("uid://7v705jmpqtl5")
+	preload("uid://7v705jmpqtl5"),
+	preload("uid://4pkccl6f5egb"),
 ]
 
 var categories: Array = [

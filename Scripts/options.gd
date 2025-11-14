@@ -249,6 +249,9 @@ func _on_music_category_option_item_selected(index: int) -> void:
 			
 			if Achievements.data.has("DayumDrops"):
 				music_chosen.add_item(" Oh My Dayum ", 1)
+				
+			if Achievements.data.has("PewDiePie"):
+				music_chosen.add_item(" BROFIST ", 2)
 
 func _on_music_category_option_pressed() -> void:
 	if not Achievements.data.has("SecretMusic"):

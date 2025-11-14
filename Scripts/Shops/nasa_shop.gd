@@ -75,7 +75,10 @@ func _on_visibility_changed() -> void:
 	update_timer.start()
 	update_timer.connect("timeout", load_stuff)
 
-	load_stuff()
+	
+func _physics_process(_delta: float) -> void:
+	if can_update:
+		load_stuff()
 
 func _on_return_pressed() -> void:
 	if nasa_shop.visible:
@@ -102,7 +105,7 @@ func _on_gen_1_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_2_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["apollo11"]
@@ -124,7 +127,7 @@ func _on_gen_2_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_3_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["marsrover"]
@@ -146,7 +149,7 @@ func _on_gen_3_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_4_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["iss"]
@@ -168,7 +171,7 @@ func _on_gen_4_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_5_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["hubbletelescope"]
@@ -190,7 +193,7 @@ func _on_gen_5_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_6_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["moonrock"]
@@ -212,7 +215,7 @@ func _on_gen_6_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_gen_7_pressed() -> void:
 	var item = Game.data["shops"]["nasashop"]["howardwolowitz"]
@@ -235,7 +238,7 @@ func _on_gen_7_pressed() -> void:
 	
 	item["pricemantissa"] = new_mantissa
 	item["priceexpo"] = new_exponent
-	load_stuff()
+	
 
 func _on_prestige_pressed() -> void:
 	var valid: int = 0

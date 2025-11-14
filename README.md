@@ -24,18 +24,18 @@ There isn't much in the game just yet but right now there is super funny meme an
   - [x] Main menu
   - [x] Settings
 - [x] Main clicker item
-- [ ] Generators
+- [x] Generators
   - [x] First page
-  - [ ] Second page
-  - [ ] Third page
+  - [x] Second page
+  - [x] Third page
 - [ ] Bonuses
-- [ ] Prestiges
+- [x] Prestiges
 - [ ] Upgrades
-- [ ] Shops
+- [x] Shops
   - [x] First page layout
-  - [ ] Second page layout
-  - [ ] Third page layout
-- [ ] Custom music
+  - [x] Second page layout
+  - [x] Third page layout
+- [x] Custom music
 - [ ] Leaderboards
 - [ ] Cheeseburger (as promised)
 

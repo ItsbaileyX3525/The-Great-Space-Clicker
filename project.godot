@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Space-Explorer"
+config/name="Space Clicker"
+config/version="1.0"
 run/main_scene="uid://b652weliw1pue"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
@@ -37,3 +38,8 @@ main="The main node"
 [gui]
 
 theme/custom_font="uid://cc7vekqoelt2s"
+
+[rendering]
+
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true

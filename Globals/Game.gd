@@ -15,7 +15,7 @@ var default_data: Dictionary = {
 		"nasashop": {
 			"neilarmstrong": {
 				"purchases": 0,
-				"generatepowermantissa": 7.5,
+				"generatepowermantissa": 3.75,
 				"generatepowerexpo": -1,
 				"pricemantissa": 5,
 				"priceexpo": 1,
@@ -24,7 +24,7 @@ var default_data: Dictionary = {
 			},
 			"apollo11": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 0,
 				"pricemantissa": 1,
 				"priceexpo": 2,
@@ -33,7 +33,7 @@ var default_data: Dictionary = {
 			},
 			"marsrover": {
 				"purchases": 0,
-				"generatepowermantissa": 7,
+				"generatepowermantissa": 3.5,
 				"generatepowerexpo": 0,
 				"pricemantissa": 2.5,
 				"priceexpo": 2,
@@ -42,7 +42,7 @@ var default_data: Dictionary = {
 			},
 			"iss": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 1,
 				"pricemantissa": 8,
 				"priceexpo": 2,
@@ -51,7 +51,7 @@ var default_data: Dictionary = {
 			},
 			"hubbletelescope": {
 				"purchases": 0,
-				"generatepowermantissa": 5,
+				"generatepowermantissa": 2.5,
 				"generatepowerexpo": 1,
 				"pricemantissa": 2,
 				"priceexpo": 3,
@@ -60,7 +60,7 @@ var default_data: Dictionary = {
 			},
 			"moonrock": {
 				"purchases": 0,
-				"generatepowermantissa": 1,
+				"generatepowermantissa": 0.5,
 				"generatepowerexpo": 2,
 				"pricemantissa": 6,
 				"priceexpo": 3,
@@ -69,7 +69,7 @@ var default_data: Dictionary = {
 			},
 			"howardwolowitz": {
 				"purchases": 0,
-				"generatepowermantissa": 5,
+				"generatepowermantissa": 2.5,
 				"generatepowerexpo": 2,
 				"pricemantissa": 2,
 				"priceexpo": 4,
@@ -80,7 +80,7 @@ var default_data: Dictionary = {
 		"weirdmageddon": {
 			"blackhole": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 3,
 				"pricemantissa": 5,
 				"priceexpo": 5,
@@ -89,7 +89,7 @@ var default_data: Dictionary = {
 			},
 			"whitehole": {
 				"purchases": 0,
-				"generatepowermantissa": 5,
+				"generatepowermantissa": 2.5,
 				"generatepowerexpo": 3,
 				"pricemantissa": 1,
 				"priceexpo": 6,
@@ -98,7 +98,7 @@ var default_data: Dictionary = {
 			},
 			"neutronstar": {
 				"purchases": 0,
-				"generatepowermantissa": 1,
+				"generatepowermantissa": 0.5,
 				"generatepowerexpo": 4,
 				"pricemantissa": 5,
 				"priceexpo": 6,
@@ -107,7 +107,7 @@ var default_data: Dictionary = {
 			},
 			"quasars": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 4,
 				"pricemantissa": 2,
 				"priceexpo": 7,
@@ -116,7 +116,7 @@ var default_data: Dictionary = {
 			},
 			"wormhole": {
 				"purchases": 0,
-				"generatepowermantissa": 6,
+				"generatepowermantissa": 3,
 				"generatepowerexpo": 4,
 				"pricemantissa": 6,
 				"priceexpo": 7,
@@ -125,7 +125,7 @@ var default_data: Dictionary = {
 			},
 			"darkmatter": {
 				"purchases": 0,
-				"generatepowermantissa": 1,
+				"generatepowermantissa": 0.5,
 				"generatepowerexpo": 5,
 				"pricemantissa": 2,
 				"priceexpo": 8,
@@ -134,7 +134,7 @@ var default_data: Dictionary = {
 			},
 			"interstellar": {
 				"purchases": 0,
-				"generatepowermantissa": 5,
+				"generatepowermantissa": 2.5,
 				"generatepowerexpo": 5,
 				"pricemantissa": 1,
 				"priceexpo": 9,
@@ -145,7 +145,7 @@ var default_data: Dictionary = {
 		"show": {
 			"theexpanse": {
 				"purchases": 0,
-				"generatepowermantissa": 1,
+				"generatepowermantissa": 0.5,
 				"generatepowerexpo": 6,
 				"pricemantissa": 5,
 				"priceexpo": 9,
@@ -154,7 +154,7 @@ var default_data: Dictionary = {
 			},
 			"startrek": {
 				"purchases": 0,
-				"generatepowermantissa": 3,
+				"generatepowermantissa": 1.5,
 				"generatepowerexpo": 6,
 				"pricemantissa": 2,
 				"priceexpo": 10,
@@ -163,7 +163,7 @@ var default_data: Dictionary = {
 			},
 			"battlestargalatica": {
 				"purchases": 0,
-				"generatepowermantissa": 1,
+				"generatepowermantissa": 0.5,
 				"generatepowerexpo": 7,
 				"pricemantissa": 6,
 				"priceexpo": 10,
@@ -172,7 +172,7 @@ var default_data: Dictionary = {
 			},
 			"doctorwho": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 7,
 				"pricemantissa": 3,
 				"priceexpo": 11,
@@ -181,7 +181,7 @@ var default_data: Dictionary = {
 			},
 			"farscape": {
 				"purchases": 0,
-				"generatepowermantissa": 6,
+				"generatepowermantissa": 3,
 				"generatepowerexpo": 7,
 				"pricemantissa": 9,
 				"priceexpo": 11,
@@ -190,16 +190,16 @@ var default_data: Dictionary = {
 			},
 			"lostinspace": {
 				"purchases": 0,
-				"generatepowermantissa": 2,
+				"generatepowermantissa": 1,
 				"generatepowerexpo": 8,
 				"pricemantissa": 2,
 				"priceexpo": 12,
 				"defaultpricemantissa": 2,
 				"defaultpriceexpo": 12
 			},
-			"cowboybebop": {
+			"Kars": {
 				"purchases": 0,
-				"generatepowermantissa": 7,
+				"generatepowermantissa": 3.5,
 				"generatepowerexpo": 8,
 				"pricemantissa": 5,
 				"priceexpo": 12,
