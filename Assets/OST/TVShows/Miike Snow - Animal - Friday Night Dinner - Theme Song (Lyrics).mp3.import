@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn4qs2cvlc0oe"
+path="res://.godot/imported/Miike Snow - Animal - Friday Night Dinner - Theme Song (Lyrics).mp3-3dd722d74863e791288d1ae2d0d5eefa.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/TVShows/Miike Snow - Animal - Friday Night Dinner - Theme Song (Lyrics).mp3"
+dest_files=["res://.godot/imported/Miike Snow - Animal - Friday Night Dinner - Theme Song (Lyrics).mp3-3dd722d74863e791288d1ae2d0d5eefa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

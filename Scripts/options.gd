@@ -13,6 +13,7 @@ extends Control
 @onready var page_2: SmoothScrollContainer = $Settings/Page2
 @onready var music_chosen: OptionButton = $Settings/Page2/VBoxContainer/Music/MusicChosen
 @onready var music_category_option: OptionButton = $Settings/Page2/VBoxContainer/MusicCategory/MusicCategoryOption
+@onready var code_input: LineEdit = $Settings/SmoothScrollContainer/VBoxContainer/Code/CodeInput
 
 var onWindowMode: int = 0
 var onResolution: int = 0
@@ -42,6 +43,9 @@ func load_positions() -> void:
 	master_volume_slider.value = round(int(Settings.current_save["masterVol"]))
 	music_volume_slider.value = round(int(Settings.current_save["musicVol"]))
 	sfx_slider.value = round(int(Settings.current_save["sfxVol"]))
+	
+	if Achievements.data.has("SecretMusic"):
+		music_category_option.add_item("secret", 5)
 	
 	music_category_option.select(Settings.current_save["musicCategory"])
 	_on_music_category_option_item_selected(Settings.current_save["musicCategory"])
@@ -183,7 +187,9 @@ func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 		Settings.save_data()
 
 func _on_code_input_text_submitted(new_text: String) -> void:
-	print(new_text)
+	var success = Codes.submit_code(new_text)
+	if success:
+		code_input.clear()
 
 func _on_next_settings_pressed() -> void:
 	if page_1.visible:
@@ -198,7 +204,8 @@ func _on_click_choice_item_selected(index: int) -> void:
 	Settings.save_data()
 
 func _on_music_chosen_item_selected(index: int) -> void:
-	Settings.current_save["musicChoice"] = index
+	var choice = music_chosen.get_item_id(index)
+	Settings.current_save["musicChoice"] = choice
 	Settings.save_data()
 	MusicManager.play_music(Settings.current_save["musicCategory"], Settings.current_save["musicChoice"])
 
@@ -208,6 +215,10 @@ func _on_music_category_option_item_selected(index: int) -> void:
 	match index:
 		0: #Default
 			music_chosen.add_item(" Spacedog ")
+			music_chosen.add_item(" Numa Numa ")
+			music_chosen.add_item(" Reposted In The Wrong ")
+			music_chosen.add_item(" I Wonder ")
+			music_chosen.add_item(" Spit In My Face ")
 		1: #Anime
 			music_chosen.add_item(" Tit For Tat ")
 			music_chosen.add_item(" Platnium Disco ")
@@ -215,11 +226,35 @@ func _on_music_category_option_item_selected(index: int) -> void:
 			music_chosen.add_item(" Distance ")
 			music_chosen.add_item(" StorySeeker ")
 		2: #One piece
-			pass
+			music_chosen.add_item(" We Are ")
+			music_chosen.add_item(" All Of Us! ")
+			music_chosen.add_item(" The Peak ")
+			music_chosen.add_item(" Raise ")
+			music_chosen.add_item(" Punks ")
 		3: #JOJO!!!
 			music_chosen.add_item(" Crazy Noisy Town ")
 			music_chosen.add_item(" Bloody Stream ")
 			music_chosen.add_item(" Il vento d'oro ")
 			music_chosen.add_item(" Roundabout ")
 			music_chosen.add_item(" Sono chi no kioku ")
+		4: #TV
+			music_chosen.add_item(" TBBT ")
+			music_chosen.add_item(" B99 ")
+			music_chosen.add_item(" FND ")
+			music_chosen.add_item(" BB ")
+			music_chosen.add_item(" Dexter ")
+		5: #Secret
+			if Achievements.data.has("Jacksepticeye"):
+				music_chosen.add_item(" All The Way ", 0)
 			
+			if Achievements.data.has("DayumDrops"):
+				music_chosen.add_item(" Oh My Dayum ", 1)
+
+func _on_music_category_option_pressed() -> void:
+	if not Achievements.data.has("SecretMusic"):
+		return
+	
+	if not music_category_option.item_count == 5:
+		return
+	
+	music_category_option.add_item("secret", 5)

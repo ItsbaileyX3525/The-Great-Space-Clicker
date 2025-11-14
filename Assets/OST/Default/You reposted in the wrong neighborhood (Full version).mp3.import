@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjb81wq071ust"
+path="res://.godot/imported/You reposted in the wrong neighborhood (Full version).mp3-45385b35ba65fb26512a9fceea46b1bb.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/Default/You reposted in the wrong neighborhood (Full version).mp3"
+dest_files=["res://.godot/imported/You reposted in the wrong neighborhood (Full version).mp3-45385b35ba65fb26512a9fceea46b1bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

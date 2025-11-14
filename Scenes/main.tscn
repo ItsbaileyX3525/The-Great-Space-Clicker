@@ -1527,11 +1527,13 @@ layout_mode = 2
 
 [node name="Code" type="Label" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Code"]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("4_jjvhh")
 text = "Enter Code:"
 
 [node name="CodeInput" type="LineEdit" parent="Options/Settings/SmoothScrollContainer/VBoxContainer/Code"]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("4_jjvhh")
 placeholder_text = "..."
 
@@ -1698,6 +1700,7 @@ flat = true
 [connection signal="value_changed" from="Options/Settings/SmoothScrollContainer/VBoxContainer/SFXVolume/MarginContainer/SFXSlider" to="Options" method="_on_sfx_slider_value_changed"]
 [connection signal="text_submitted" from="Options/Settings/SmoothScrollContainer/VBoxContainer/Code/CodeInput" to="Options" method="_on_code_input_text_submitted"]
 [connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/MusicCategory/MusicCategoryOption" to="Options" method="_on_music_category_option_item_selected"]
+[connection signal="pressed" from="Options/Settings/Page2/VBoxContainer/MusicCategory/MusicCategoryOption" to="Options" method="_on_music_category_option_pressed"]
 [connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/Music/MusicChosen" to="Options" method="_on_music_chosen_item_selected"]
 [connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/ClickSound/ClickChoice" to="Options" method="_on_click_choice_item_selected"]
 [connection signal="pressed" from="Options/Settings/NextSettings" to="Options" method="_on_next_settings_pressed"]

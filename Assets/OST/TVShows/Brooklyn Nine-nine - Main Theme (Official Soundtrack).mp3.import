@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l8dl1svyk83w"
+path="res://.godot/imported/Brooklyn Nine-nine - Main Theme (Official Soundtrack).mp3-df69cba7a342fa90a76c055543e621bd.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/TVShows/Brooklyn Nine-nine - Main Theme (Official Soundtrack).mp3"
+dest_files=["res://.godot/imported/Brooklyn Nine-nine - Main Theme (Official Soundtrack).mp3-df69cba7a342fa90a76c055543e621bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

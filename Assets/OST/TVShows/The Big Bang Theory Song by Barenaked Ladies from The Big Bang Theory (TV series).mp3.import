@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgem1kl1dxp2h"
+path="res://.godot/imported/The Big Bang Theory Song by Barenaked Ladies from The Big Bang Theory (TV series).mp3-2fd6316a0bd93f53a719ca4b82f17544.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/TVShows/The Big Bang Theory Song by Barenaked Ladies from The Big Bang Theory (TV series).mp3"
+dest_files=["res://.godot/imported/The Big Bang Theory Song by Barenaked Ladies from The Big Bang Theory (TV series).mp3-2fd6316a0bd93f53a719ca4b82f17544.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

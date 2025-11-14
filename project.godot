@@ -19,6 +19,8 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 Settings="*res://Globals/Settings.gd"
 Game="*res://Globals/Game.gd"
 MusicManager="*res://Globals/MusicManager.gd"
+Achievements="*res://Globals/Achievements.gd"
+Codes="*res://Globals/Codes.gd"
 
 [display]
 

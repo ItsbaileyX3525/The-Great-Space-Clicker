@@ -19,6 +19,7 @@ func update_score() -> void:
 func _on_clicker_pressed() -> void:
 	if can_click:
 		var click_score = Big.new(1)
+		MusicManager.play_click()
 		Game.data["score"].plusEquals(click_score)
 		update_score()
 		can_click = false

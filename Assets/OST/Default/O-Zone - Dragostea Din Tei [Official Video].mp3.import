@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clcurn17r0kq1"
+path="res://.godot/imported/O-Zone - Dragostea Din Tei [Official Video].mp3-4d74f27c482e8a496bba093783f3224f.mp3str"
+
+[deps]
+
+source_file="res://Assets/OST/Default/O-Zone - Dragostea Din Tei [Official Video].mp3"
+dest_files=["res://.godot/imported/O-Zone - Dragostea Din Tei [Official Video].mp3-4d74f27c482e8a496bba093783f3224f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
