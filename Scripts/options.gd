@@ -49,7 +49,8 @@ func load_positions() -> void:
 	
 	music_category_option.select(Settings.current_save["musicCategory"])
 	_on_music_category_option_item_selected(Settings.current_save["musicCategory"])
-	music_chosen.select(Settings.current_save["musicChoice"])
+	var idx = music_chosen.get_item_index(Settings.current_save["musicChoice"])
+	music_chosen.select(idx)
 	
 	MusicManager.play_music(Settings.current_save["musicCategory"], Settings.current_save["musicChoice"])
 	

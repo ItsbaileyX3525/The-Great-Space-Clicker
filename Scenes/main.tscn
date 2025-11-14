@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b0oeqxommt21e"]
+[gd_scene load_steps=69 format=3 uid="uid://b0oeqxommt21e"]
 
 [ext_resource type="Script" uid="uid://euvmw3elnii4" path="res://Scripts/Game.gd" id="1_8gbba"]
 [ext_resource type="Shader" uid="uid://dr2l6yn23j3bd" path="res://Shaders/menu.gdshader" id="1_bo1nx"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bngimo6mk0ugb" path="res://Decals/leaderboard_white.png" id="8_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bsc6c4pwfxypm" path="res://Decals/interstella.jpg" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://ddea8h4o6bnel" path="res://Decals/morshu.png" id="9_6vcvc"]
-[ext_resource type="Script" uid="uid://bdn4a62x1e38n" path="res://Scripts/leaderboard_menu.gd" id="9_hpc6h"]
 [ext_resource type="Script" uid="uid://kyq1fy20d8n" path="res://Scripts/Shops/nasa_shop.gd" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://cux8ej5mm2mig" path="res://Decals/nasaShop/neil.jpg" id="10_hptm8"]
 [ext_resource type="Script" uid="uid://cl8pr1ak5j4mr" path="res://Scripts/prestige_shop.gd" id="10_kltya"]
@@ -45,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://c3oipj3egpu0w" path="res://Decals/showShop/farscape.webp" id="38_jut3y"]
 [ext_resource type="Texture2D" uid="uid://bs7f2w5rlctbq" path="res://Decals/showShop/lostinspace.webp" id="39_v2nl5"]
 [ext_resource type="Texture2D" uid="uid://bhd0md7nddlbm" path="res://Decals/showShop/kars.webp" id="40_dmskm"]
+[ext_resource type="Script" uid="uid://dr17txyaghmt" path="res://Scripts/leaderboard.gd" id="45_kqrg6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("1_bo1nx")
@@ -163,6 +163,12 @@ expand_margin_bottom = 12.0
 script = ExtResource("36_aqgau")
 
 [sub_resource type="Resource" id="Resource_k2e45"]
+script = ExtResource("36_aqgau")
+
+[sub_resource type="Resource" id="Resource_kqrg6"]
+script = ExtResource("36_aqgau")
+
+[sub_resource type="Resource" id="Resource_nwwfm"]
 script = ExtResource("36_aqgau")
 
 [node name="Main" type="Control" groups=["main"]]
@@ -311,19 +317,6 @@ offset_right = 55.0
 offset_bottom = 50.0
 texture = ExtResource("8_pdsj5")
 expand_mode = 1
-
-[node name="LeaderboardMenu" type="Control" parent="Main"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("9_hpc6h")
-
-[node name="Background" type="ColorRect" parent="Main/LeaderboardMenu"]
-material = SubResource("ShaderMaterial_jjvhh")
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
 
 [node name="PrestigeShop" type="Control" parent="."]
 visible = false
@@ -2042,13 +2035,81 @@ theme_override_font_sizes/font_size = 240
 text = ">"
 flat = true
 
+[node name="Leaderboard" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("45_kqrg6")
+
+[node name="Background" type="ColorRect" parent="Leaderboard"]
+material = SubResource("ShaderMaterial_jjvhh")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Return" type="Button" parent="Leaderboard"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.17580467, 0.17580467)
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+text = " RETURN "
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Leaderboard"]
+layout_mode = 0
+offset_top = 63.0
+offset_right = 4655.5
+offset_bottom = 3882.7305
+scale = Vector2(0.15315218, 0.15315218)
+script = ExtResource("35_536cc")
+wheel_scroll_damper = SubResource("Resource_kqrg6")
+dragging_scroll_damper = SubResource("Resource_nwwfm")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="Player" type="VBoxContainer" parent="Leaderboard/SmoothScrollContainer"]
+layout_mode = 2
+
+[node name="Submit" type="Control" parent="Leaderboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 713.0
+offset_top = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Username" type="LineEdit" parent="Leaderboard/Submit"]
+layout_mode = 0
+offset_top = 209.99998
+offset_right = 2939.149
+offset_bottom = 480.0
+scale = Vector2(0.14936295, 0.14936295)
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+placeholder_text = "Username"
+
+[node name="Submit" type="Button" parent="Leaderboard/Submit"]
+layout_mode = 0
+offset_left = 83.00001
+offset_top = 278.00003
+offset_right = 1126.0
+offset_bottom = 540.0
+scale = Vector2(0.21513388, 0.21513388)
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_jjvhh")
+text = " SUBMIT "
+
 [connection signal="pressed" from="Main/Clicker" to="." method="_on_clicker_pressed"]
 [connection signal="pressed" from="Main/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Main/PrestigeShop" to="." method="_on_prestige_shop_pressed"]
 [connection signal="timeout" from="Main/ClickCD" to="." method="_on_click_cd_timeout"]
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="visibility_changed" from="Main/LeaderboardMenu" to="Main/LeaderboardMenu" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="PrestigeShop" to="PrestigeShop" method="_on_visibility_changed"]
 [connection signal="pressed" from="Shops/NasaShop" to="Shops" method="_on_nasa_shop_pressed"]
 [connection signal="pressed" from="Shops/WeirdShop" to="Shops" method="_on_weird_shop_pressed"]
@@ -2101,3 +2162,8 @@ flat = true
 [connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/Music/MusicChosen" to="Options" method="_on_music_chosen_item_selected"]
 [connection signal="item_selected" from="Options/Settings/Page2/VBoxContainer/ClickSound/ClickChoice" to="Options" method="_on_click_choice_item_selected"]
 [connection signal="pressed" from="Options/Settings/NextSettings" to="Options" method="_on_next_settings_pressed"]
+[connection signal="visibility_changed" from="Leaderboard" to="Leaderboard" method="_on_visibility_changed"]
+[connection signal="pressed" from="Leaderboard/Return" to="Leaderboard" method="_on_return_pressed"]
+[connection signal="text_changed" from="Leaderboard/Submit/Username" to="Leaderboard" method="_on_username_text_changed"]
+[connection signal="text_submitted" from="Leaderboard/Submit/Username" to="Leaderboard" method="_on_username_text_submitted"]
+[connection signal="pressed" from="Leaderboard/Submit/Submit" to="Leaderboard" method="_on_submit_pressed"]

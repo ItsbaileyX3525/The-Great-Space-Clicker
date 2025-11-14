@@ -2,9 +2,9 @@ extends Control
 @onready var main: Control = $Main
 @onready var shops: Control = $Shops
 @onready var score_text_2: Label = $Main/ScoreText2
-@onready var leaderboard_menu: Control = $Main/LeaderboardMenu
 @onready var prestige_shop: Control = $PrestigeShop
 @onready var options: Control = $Options
+@onready var leaderboard: Control = $Leaderboard
 
 var can_click: bool = true
 
@@ -38,8 +38,8 @@ func _on_settings_pressed() -> void:
 		main.visible = false
 
 func _on_leaderboard_pressed() -> void:
-	if not leaderboard_menu.visible:
-		leaderboard_menu.visible = true
+	if not leaderboard.visible:
+		leaderboard.visible = true
 		main.visible = false
 
 func _on_prestige_shop_pressed() -> void:
