@@ -59,17 +59,17 @@ There are loads more features that I cannot be bothered writing about so try out
 
 ## Codes
 
-spedicey - Unlocks secret music
-dayumm - Unlocks secret music
-brofist - Unlocks secret music
+spedicey - Unlocks secret music   
+dayumm - Unlocks secret music   
+brofist - Unlocks secret music   
 
 ## Credits
 
-Coder - Bailey
-UI Design - Bailey
-Shaders - GPT
-Idea - The dude who made cookier clicker + Space (me)
-Cheeseburger - the interwebs
+Coder - Bailey   
+UI Design - Bailey   
+Shaders - GPT   
+Idea - The dude who made cookier clicker + Space (me)   
+Cheeseburger - the interwebs   
 
 ## AI content disclosure
 
